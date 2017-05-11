@@ -1,2 +1,8 @@
-$size__site-main: 100%;
-$size__site-sidebar: 25%;
+$size__max-width: 1080px;
+
+$size__ratio-small: 30%;
+
+$size__ratio-large: calc(70% - 2em);
+
+$query__small: 600px;
+$query__medium: 900px;

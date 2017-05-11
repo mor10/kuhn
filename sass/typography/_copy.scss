@@ -1,5 +1,6 @@
 p {
-	margin-bottom: 1.5em;
+	margin-top: .5em;
+	margin-bottom: 1em;
 }
 
 dfn, cite, em, i {
@@ -7,7 +8,21 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	position: relative;
+	margin: 0 0 1em;
+	background: $color__background-pre;
+	padding: 1em 2em .5em 5em;
+	font-style: italic;
+
+	&:before {
+		position: absolute;
+		top: -.2em;
+		left: -.13em;
+		content: "“";
+		font-size: 12em;
+		line-height: 100%;
+		color: white;
+	}
 }
 
 address {

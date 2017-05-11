@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: Kuhn
 Theme URI: http://underscores.me/
@@ -264,10 +265,21 @@ select,
 textarea {
 	color: #404040;
 	font-family: "Rubik", sans-serif;
-	font-size: 24px;
-	font-size: 1.5rem;
+	font-size: 20px;
+	font-size: 1.25rem;
 	font-weight: 300;
 	line-height: 1.5;
+}
+
+@media screen and (min-width: 600px) {
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-size: 24px;
+		font-size: 1.5rem;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -276,8 +288,33 @@ h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 }
 
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2.6em;
+}
+
+h3 {
+	font-size: 2.2em;
+}
+
+h4 {
+	font-size: 2em;
+}
+
+h5 {
+	font-size: 1.8em;
+}
+
+h6 {
+	font-size: 1.6em;
+}
+
 p {
-	margin-bottom: 1.5em;
+	margin-top: .5em;
+	margin-bottom: 1em;
 }
 
 dfn, cite, em, i {
@@ -285,7 +322,21 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	position: relative;
+	margin: 0 0 1em;
+	background: #eee;
+	padding: 1em 2em .5em 5em;
+	font-style: italic;
+}
+
+blockquote:before {
+	position: absolute;
+	top: -.2em;
+	left: -.13em;
+	content: "“";
+	font-size: 12em;
+	line-height: 100%;
+	color: white;
 }
 
 address {
@@ -344,11 +395,7 @@ body {
 }
 
 blockquote, q {
-	quotes: "" "";
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-	content: "";
+	quotes: "“ ”";
 }
 
 hr {
@@ -359,7 +406,7 @@ hr {
 }
 
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em;
 }
 
 ul {
@@ -373,7 +420,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: .5em;
 }
 
 dt {
@@ -392,13 +439,47 @@ img {
 }
 
 figure {
-	margin: 1em 0;
+	margin: 0;
 	/* Extra wide images within figure tags don't overflow the content area. */
 }
 
 table {
+	border-collapse: collapse;
 	margin: 0 0 1.5em;
 	width: 100%;
+}
+
+thread th {
+	border-bottom: 2px solid #bbb;
+	padding-bottom: .5em;
+}
+
+td,
+th {
+	vertical-align: top;
+}
+
+th {
+	padding: .4em;
+	text-align: left;
+}
+
+tr {
+	border-bottom: 1px solid #eee;
+}
+
+td {
+	padding: .4em;
+}
+
+th:first-child,
+td:first-child {
+	padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+	padding-right: 0;
 }
 
 /*--------------------------------------------------------------
@@ -408,32 +489,28 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
-	font-size: 12px;
-	font-size: 0.75rem;
+	border: 2px solid;
+	border-color: black;
+	background: transparent;
+	color: black;
+	font-size: 16px;
+	font-size: 1rem;
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: .5em 1em;
 }
 
-button:hover,
+button:hover, button:active, button:focus,
 input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-}
-
-button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
+input[type="reset"]:hover,
 input[type="reset"]:active,
 input[type="reset"]:focus,
+input[type="submit"]:hover,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+	background: white;
+	color: black;
 }
 
 input[type="text"],
