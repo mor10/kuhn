@@ -263,14 +263,17 @@ input,
 select,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
+	font-family: "Rubik", sans-serif;
+	font-size: 24px;
+	font-size: 1.5rem;
+	font-weight: 300;
 	line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	font-weight: 700;
+	text-transform: uppercase;
 }
 
 p {

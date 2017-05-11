@@ -83,6 +83,70 @@ function kuhn_content_width() {
 }
 add_action( 'after_setup_theme', 'kuhn_content_width', 0 );
 
+
+/**
+ * Register custom fonts.
+ */
+function kuhn_fonts_url() {
+	$fonts_url = '';
+
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Slabo 27px, Playfair Display, and Yanone Kaffeesatz translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$vollkorn = _x( 'on', 'Vollkorn font: on or off', 'kuhn' );
+	$yanone_kaffeesatz = _x( 'on', 'Yanone Kaffeesatz font: on or off', 'kuhn' );
+	$slabo = _x( 'on', 'Slabo 27px font: on or off', 'kuhn' );
+
+	$font_families = array();
+
+	if ( 'off' !== $vollkorn ) {
+		$font_families[] = 'Rubik:300,300i,500,500i,700';
+	}
+
+	if ( 'off' !== $yanone_kaffeesatz ) {
+		$font_families[] = 'Roboto Mono:400,400i,700,700i';
+	}
+
+	if ( 'off' !== $slabo ) {
+		$font_families[] = 'Slabo 27px';
+	}
+
+	if ( in_array( 'on', array($vollkorn, $yanone_kaffeesatz, $slabo) ) ) {
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
+}
+
+/**
+ * Add preconnect for Google Fonts.
+ *
+ * @since Twenty Seventeen 1.0
+ *
+ * @param array  $urls           URLs to print for resource hints.
+ * @param string $relation_type  The relation type the URLs are printed.
+ * @return array $urls           URLs to print for resource hints.
+ */
+function kuhn_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'kuhn-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://fonts.gstatic.com',
+			'crossorigin',
+		);
+	}
+
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'kuhn_resource_hints', 10, 2 );
+
 /**
  * Register widget area.
  *
@@ -105,6 +169,9 @@ add_action( 'widgets_init', 'kuhn_widgets_init' );
  * Enqueue scripts and styles.
  */
 function kuhn_scripts() {
+	// Enqueue Google Fonts:
+	wp_enqueue_style( 'kuhn-fonts', kuhn_fonts_url() );
+
 	wp_enqueue_style( 'kuhn-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'kuhn-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
