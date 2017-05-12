@@ -1,16 +1,30 @@
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: 2em;
 	max-width: 100%;
+	font-family: $font__meta;
+	font-size: 90%;
+	color: hsl(0, 0%, 40%);
+	text-align: center;
+
+	a {
+		color: inherit;
+	}
 
 	img[class*="wp-image-"] {
 		@include center-block;
 	}
 
 	.wp-caption-text {
-		margin: 0.8075em 0;
+		margin: .5em 0 1.5em 1em;
+
+		@media screen and (min-width: $query__small) {
+			margin-left: 2em;
+		}
+
+		@media screen and (min-width: $query__medium) {
+			margin-left: 0;
+		}
 	}
 }
 
-.wp-caption-text {
-	text-align: center;
-}
+

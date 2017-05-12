@@ -2,13 +2,15 @@
 	width: 100%;
 	margin: 3em 0;
 	padding: 1.5em 0;
-	border-top: 1px solid hsl(0, 0%, 80%);
+	border-top: 3px solid $color__grey_black;
 }
 
-.comments-title {
+.comments-title,
+.comment-reply-title {
 	margin-bottom: 2em;
-	font-size: 2.5em;
+	font-size: 2em;
 	font-weight: 900;
+	font-family: $font__meta;
 }
 
 .comment-list {
@@ -181,13 +183,7 @@
 /* Comment Form */
 
 
-.comment-reply-title {
-	margin-bottom: 1em;
-}
 
-.comment-list .comment-reply-title {
-	text-align: left;
-}
 
 .comment-form {
 	line-height: 1.3em;

@@ -580,11 +580,177 @@ a:hover, a:focus, a:active {
 }
 
 a:focus {
-	outline: thin dotted;
+	outline: thin dotted #22262a;
 }
 
 a:hover, a:active {
 	outline: 0;
+}
+
+.page-content a,
+.entry-content a,
+.entry-summary a,
+.comment-content a {
+	text-decoration: none;
+	border-bottom: 3px solid #22262a;
+}
+
+.page-content a:focus, .page-content a:hover,
+.entry-content a:focus,
+.entry-content a:hover,
+.entry-summary a:focus,
+.entry-summary a:hover,
+.comment-content a:focus,
+.comment-content a:hover {
+	color: #22262a;
+	border-bottom-width: 5px;
+}
+
+/*--------------------------------------------------------------
+## Content Navigation
+--------------------------------------------------------------*/
+.comment-navigation,
+.posts-navigation,
+.post-navigation,
+.paging-navigation {
+	padding: 2em 0;
+	text-align: left;
+	overflow: hidden;
+}
+
+.comment-navigation a,
+.posts-navigation a,
+.post-navigation a,
+.paging-navigation a {
+	display: block;
+	width: 100%;
+	text-decoration: none;
+	padding: 1em;
+	border: 1px solid #22262a;
+	color: black;
+}
+
+.comment-navigation a:hover, .comment-navigation a:focus,
+.posts-navigation a:hover,
+.posts-navigation a:focus,
+.post-navigation a:hover,
+.post-navigation a:focus,
+.paging-navigation a:hover,
+.paging-navigation a:focus {
+	color: white;
+	border-color: #22262a;
+	background: #22262a;
+}
+
+.nav-links {
+	margin: 0 auto;
+}
+
+.nav-previous {
+	padding-bottom: 1em;
+}
+
+@media screen and (min-width: 900px) {
+	.nav-links {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		-webkit-box-align: stretch;
+		    -ms-flex-align: stretch;
+		        align-items: stretch;
+		padding: 0;
+	}
+	.comment-navigation .nav-previous,
+	.comment-navigation .nav-next,
+	.posts-navigation .nav-previous,
+	.posts-navigation .nav-next,
+	.post-navigation .nav-previous,
+	.post-navigation .nav-next {
+		float: left;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: stretch;
+		    -ms-flex-align: stretch;
+		        align-items: stretch;
+		width: 48%;
+	}
+	.comment-navigation .nav-next,
+	.posts-navigation .nav-next,
+	.post-navigation .nav-next {
+		float: right;
+		text-align: right;
+	}
+	.nav-previous {
+		padding-bottom: 0;
+	}
+}
+
+.post-navigation .meta-nav {
+	display: block;
+}
+
+@media screen and (min-width: 30em) {
+	.post-navigation {
+		padding-bottom: 1em;
+	}
+}
+
+.post-navigation .post-title {
+	font-size: 1.2em;
+	font-weight: 700;
+	border-bottom: 3px solid #22262a;
+}
+
+.post-navigation a:hover .post-title,
+.post-navigation a:focus .post-title {
+	border-bottom-color: white;
+}
+
+.pagination {
+	font-family: "Roboto Mono", sans-serif;
+}
+
+.pagination .nav-links {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination span {
+	padding: .5em 1em;
+	background: white;
+}
+
+.pagination a {
+	text-decoration: none;
+}
+
+.pagination a:focus, .pagination a:hover {
+	color: white;
+	background: #22262a;
+}
+
+.pagination .current {
+	font-weight: 600;
+	color: #22262a;
+}
+
+.pagination .prev .icon {
+	margin-right: 1em;
+}
+
+.pagination .next .icon {
+	margin-left: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -650,13 +816,439 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.widget-area {
+	margin-top: 1.5em;
+}
+
+/* Footer widgets for archive pages */
+@media screen and (min-width: 900px) {
+	.archive-view.has-sidebar .footer-widgets {
+		width: 100%;
+	}
+}
+
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 2em;
+	padding: 0 0 2em;
 	/* Make sure select elements fit in widgets. */
 }
 
+.widget ul,
+.widget ol {
+	padding: .7em 0 0;
+	margin-bottom: 0;
+	list-style-type: none;
+}
+
+.widget ul li,
+.widget ol li {
+	display: block;
+	line-height: 2em;
+}
+
+.widget ul li ul,
+.widget ul li ol,
+.widget ol li ul,
+.widget ol li ol {
+	margin-left: .5em;
+}
+
+@media screen and (min-width: 30em) {
+	.widget ul li ul,
+	.widget ul li ol,
+	.widget ol li ul,
+	.widget ol li ol {
+		margin-left: 1em;
+	}
+}
+
+.widget a {
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.widget a:hover, .widget a:focus {
+	border-bottom: 3px solid #3e454c;
+}
+
 .widget select {
-	max-width: 100%;
+	width: 100%;
+	height: 2.5em;
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+.widget-title {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-size: 1.4em;
+}
+
+/* Archive and Categories widgets */
+.widget_archive li {
+	color: #7D7D7D;
+}
+
+.widget_categories .children {
+	padding-top: 0;
+}
+
+/* Search widget. */
+.widget_search .search-submit {
+	display: none;
+}
+
+/* Pages and Menu widgets */
+.widget_pages .children,
+.widget_nav_menu .sub-menu {
+	padding-top: 0;
+	padding-bottom: .5em;
+}
+
+.widget_pages a,
+.widget_nav_menu a {
+	display: block;
+	padding: 1em 0;
+	text-decoration: none;
+	border-bottom: 1px dashed gray;
+}
+
+.widget_pages a:hover, .widget_pages a:focus,
+.widget_nav_menu a:hover,
+.widget_nav_menu a:focus {
+	text-decoration: none;
+	border-bottom: 1px dashed gray;
+}
+
+.widget_pages li,
+.widget_nav_menu li {
+	padding: 0;
+}
+
+/* Meta widget */
+.widget_meta li {
+	padding: 0;
+}
+
+/* Recent comments */
+.widget_recent_comments li {
+	line-height: 1.3em;
+	padding-bottom: .5em;
+}
+
+.widget_recent_comments a:hover,
+.widget_recent_comments a:focus {
+	padding-left: 0;
+}
+
+/* RSS widget */
+.widget_rss li {
+	margin-bottom: 1em;
+}
+
+.widget li a.rsswidget {
+	padding-right: .5em;
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
+.rss-date,
+.widget_rss cite {
+	color: #333;
+	font-family: "Roboto Mono", sans-serif;
+	font-size: .8em;
+}
+
+.rssSummary {
+	padding: .5em 0;
+	font-size: .8em;
+	line-height: 1.4em;
+}
+
+/* Search widget */
+.widget_search input[type="search"] {
+	box-sizing: border-box;
+	width: 100%;
+	padding: .5em 1em;
+	border: 1px solid #c3c3c3;
+	border-radius: 0;
+}
+
+/* Calendar widget */
+.widget_calendar {
+	font-weight: 400;
+}
+
+.widget_calendar caption {
+	padding: .5em 0;
+	font-size: 1em;
+	font-weight: 500;
+	text-align: left;
+}
+
+.widget_calendar thead {
+	background: transparent;
+	color: black;
+}
+
+.widget_calendar thead th {
+	border-bottom-width: 2px;
+}
+
+.widget_calendar td {
+	padding: .2em;
+	font-size: .8em;
+	text-align: center;
+	background: white;
+	border: 1px solid #cccccc;
+}
+
+.widget_calendar th {
+	border: none;
+	text-align: center;
+}
+
+.widget_calendar .pad {
+	background: #eaeaea;
+}
+
+.widget_calendar a {
+	font-weight: 900;
+	text-decoration: none;
+}
+
+/* Text widget */
+.textwidget {
+	font-size: 80%;
+	line-height: 1.3em;
+}
+
+/* Footer widget stylings */
+.footer-widgets {
+	margin: 2em 0 0;
+	padding: 1em 0;
+	background-color: #1a1a1a;
+}
+
+@media screen and (min-width: 600px) {
+	.footer-widgets {
+		padding: 2em 1em;
+	}
+}
+
+.footer-widgets .widget {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	margin: 0 2em 2em;
+	padding-top: 1em;
+}
+
+.footer-widgets .widget .original-title {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-widgets .widget,
+.footer-widgets .widget-title,
+.footer-widgets .widget a,
+.footer-widgets .widget_calendar thead,
+.footer-widgets .rss-date,
+.footer-widgets .widget_rss cite {
+	color: white;
+}
+
+.footer-widgets .widget_calendar td,
+.footer-widgets .widget_calendar a {
+	color: black;
+}
+
+.footer-widget-area__wrap {
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 1080px) {
+	.footer-widget-area__wrap {
+		/* Use flex to create a responsive layout */
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-ms-flex-pack: distribute;
+		    justify-content: space-around;
+		/* If only one widget is displayed, make it full width. */
+		/* If 2 or 3 widgets are displayed, make the second one twice as wide. */
+		/* If 4 or more widgets are displayed, show three across when available. */
+	}
+	.footer-widget-area__wrap .widget:only-of-type {
+		width: 100%;
+	}
+	.footer-widget-area__wrap .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
+		-webkit-box-flex: 2;
+		    -ms-flex: 2;
+		        flex: 2;
+	}
+	.footer-widget-area__wrap .widget:nth-last-child(n+4),
+	.footer-widget-area__wrap .widget:nth-last-child(n+4) ~ .widget {
+		width: 30%;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 1 30%;
+		        flex: 1 1 30%;
+	}
+}
+
+@media screen and (min-width: 90em) {
+	.footer-widget-area__wrap {
+		max-width: 70em;
+	}
+}
+
+/* Custom Recent Comments and Recent Posts widgets */
+.content-area .widget_hume_recent_comments li a,
+.content-area .widget_hume_recent_posts li a {
+	color: black;
+}
+
+.widget_hume_recent_comments li,
+.widget_hume_recent_posts li {
+	position: relative;
+	padding: 0 0 1em 70px;
+	margin-bottom: 2em;
+	border-bottom: 1px solid #c3c3c3;
+}
+
+.widget_hume_recent_comments ul,
+.widget_hume_recent_posts ul {
+	margin-top: 2em;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.widget_hume_recent_comments li:last-child,
+.widget_hume_recent_posts li:last-child {
+	margin-bottom: 0;
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.widget_hume_recent_comments a,
+.widget_hume_recent_posts a {
+	display: block;
+	font-size: 1em;
+}
+
+.widget_hume_recent_comments a:focus, .widget_hume_recent_comments a:hover,
+.widget_hume_recent_posts a:focus,
+.widget_hume_recent_posts a:hover {
+	text-decoration: none;
+	border-bottom: none;
+}
+
+.widget_hume_recent_comments .post-icon,
+.widget_hume_recent_posts .post-icon {
+	position: absolute;
+	left: 0;
+	width: 50px;
+	height: 50px;
+}
+
+.widget_hume_recent_comments .post-icon img {
+	border-radius: 50px;
+}
+
+.widget_hume_recent_comments .title,
+.widget_hume_recent_comments .original-title {
+	margin-top: 0;
+	margin-bottom: .8em;
+	font-size: .7em;
+	line-height: 1.4em;
+}
+
+.widget_hume_recent_comments .excerpt {
+	margin-top: 0;
+	margin-bottom: .8em;
+	font-size: .8em;
+	font-weight: 400;
+	line-height: 1.4em;
+}
+
+.widget_hume_recent_comments .excerpt:before {
+	content: "“";
+}
+
+.widget_hume_recent_comments .excerpt:after {
+	content: "”";
+}
+
+.widget_hume_recent_comments .original-title {
+	color: #7D7D7D;
+	font-weight: 500;
+}
+
+.widget_hume_recent_comments .original-title span {
+	font-weight: normal;
+	font-style: italic;
+}
+
+.widget_hume_recent_comments a:focus .original-title,
+.widget_hume_recent_comments a:hover .original-title {
+	text-decoration: underline;
+}
+
+.widget_hume_recent_comments a:focus .title,
+.widget_hume_recent_comments a:focus .excerpt,
+.widget_hume_recent_comments a:hover .title,
+.widget_hume_recent_comments a:hover .excerpt {
+	color: inherit;
+}
+
+.footer-widgets .widget_hume_recent_comments a:focus .original-title,
+.footer-widgets .widget_hume_recent_comments a:hover .original-title {
+	color: white;
+}
+
+/* Custom Recent Posts widget */
+.widget_hume_recent_posts .post-icon {
+	width: 50px;
+	height: 50px;
+	font-size: 1.3em;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	background: #333333;
+}
+
+.widget_hume_recent_posts .title {
+	margin: 0;
+	font-size: .9em;
+	line-height: 1.4em;
+}
+
+.widget_hume_recent_posts .meta {
+	margin: 0 0 .8em;
+	font-size: .7em;
+	text-transform: uppercase;
+	color: #7D7D7D;
+}
+
+.widget_hume_recent_posts a:hover .title,
+.widget_hume_recent_posts a:focus .title {
+	text-decoration: underline;
+}
+
+.footer-widgets .widget_hume_recent_posts a:hover .title,
+.footer-widgets .widget_hume_recent_posts a:focus .title {
+	color: white;
+}
+
+.footer-widgets .widget_hume_recent_comments li,
+.footer-widgets .widget_hume_recent_posts li {
+	border-bottom: 1px  dotted white;
+}
+
+.footer-widgets .widget_hume_recent_comments li:last-of-type,
+.footer-widgets .widget_hume_recent_posts li:last-of-type {
+	border-bottom: none;
 }
 
 /*--------------------------------------------------------------
@@ -1053,13 +1645,15 @@ button.dropdown-toggle {
 	width: 100%;
 	margin: 3em 0;
 	padding: 1.5em 0;
-	border-top: 1px solid #cccccc;
+	border-top: 3px solid #22262a;
 }
 
-.comments-title {
+.comments-title,
+.comment-reply-title {
 	margin-bottom: 2em;
-	font-size: 2.5em;
+	font-size: 2em;
 	font-weight: 900;
+	font-family: "Roboto Mono", sans-serif;
 }
 
 .comment-list {
@@ -1204,14 +1798,6 @@ button.dropdown-toggle {
 }
 
 /* Comment Form */
-.comment-reply-title {
-	margin-bottom: 1em;
-}
-
-.comment-list .comment-reply-title {
-	text-align: left;
-}
-
 .comment-form {
 	line-height: 1.3em;
 }
@@ -1388,8 +1974,16 @@ object {
 ## Captions
 --------------------------------------------------------------*/
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: 2em;
 	max-width: 100%;
+	font-family: "Roboto Mono", sans-serif;
+	font-size: 90%;
+	color: #666666;
+	text-align: center;
+}
+
+.wp-caption a {
+	color: inherit;
 }
 
 .wp-caption img[class*="wp-image-"] {
@@ -1399,18 +1993,42 @@ object {
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	margin: .5em 0 1.5em 1em;
 }
 
-.wp-caption-text {
-	text-align: center;
+@media screen and (min-width: 600px) {
+	.wp-caption .wp-caption-text {
+		margin-left: 2em;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.wp-caption .wp-caption-text {
+		margin-left: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+## Images
+--------------------------------------------------------------*/
+.wp-caption.aligncenter,
+.centered-image {
+	max-width: 100vw;
+	margin: 0 -1em;
+}
+
+@media screen and (min-width: 600px) {
+	.wp-caption.aligncenter,
+	.centered-image {
+		margin: 0 -2em;
+	}
 }
 
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
 .gallery {
-	margin-bottom: 1.5em;
+	margin: 1.5em 0;
 }
 
 .gallery-item {
@@ -1418,6 +2036,31 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+	padding: 1em;
+}
+
+.gallery-item img {
+	display: block;
+}
+
+.gallery-item a {
+	display: inline-block;
+	border-bottom: none;
+}
+
+.gallery-item a:hover, .gallery-item a:focus {
+	border-bottom: none;
+	box-shadow: none;
+}
+
+.gallery-item a:hover img, .gallery-item a:focus img {
+	border-color: #3e454c;
+}
+
+.gallery-item a img {
+	padding: .5em;
+	margin: 0 auto;
+	border: 1px solid #fff;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -1454,6 +2097,66 @@ object {
 
 .gallery-caption {
 	display: block;
+	margin: 0;
+	font-family: "Roboto Mono", sans-serif;
+	border: none;
+}
+
+/*--------------------------------------------------------------
+## Icons
+--------------------------------------------------------------*/
+/* SVG Icons base styles */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	position: relative;
+	/* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 1em;
+}
+
+/*--------------------------------------------------------------
+SVG Fallbacks
+--------------------------------------------------------------*/
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
+}
+
+.no-svg .nav-links .svg-fallback {
+	padding: 0 .5em;
+	color: inherit;
+	background: inherit;
+}
+
+.no-svg .svg-fallback.icon-arrow-long-left:before {
+	content: "←";
+}
+
+.no-svg .svg-fallback.icon-arrow-long-right:before {
+	content: "→";
+}
+
+/* Social Menu fallbacks */
+.no-svg .social-menu a {
+	height: auto;
+	width: auto;
+}
+
+.no-svg .social-menu li a .screen-reader-text {
+	clip: auto;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 400;
+	height: auto;
+	position: relative !important;
+	/* overrides previous !important styles */
+	width: auto;
 }
 
 /*# sourceMappingURL=../kuhn/sass/maps/style.css.map */

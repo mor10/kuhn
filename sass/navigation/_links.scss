@@ -10,10 +10,27 @@ a {
 		color: $color__link-hover;
 	}
 	&:focus {
-		outline: thin dotted;
+		outline: thin dotted $color__grey_black;
 	}
 	&:hover,
 	&:active {
 		outline: 0;
+	}
+}
+
+.page-content,
+.entry-content,
+.entry-summary,
+.comment-content {
+
+	a {
+		text-decoration: none;
+		border-bottom: 3px solid $color__grey_black;
+
+		&:focus,
+		&:hover {
+			color: $color__grey_black;
+			border-bottom-width: 5px;
+		}
 	}
 }
