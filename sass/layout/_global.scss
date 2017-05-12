@@ -1,0 +1,11 @@
+.site-content {
+    padding: 1em;
+    max-width: 45em;
+    margin: 0 auto;
+
+    @media screen and (min-width: $query__small) {
+        padding: 2em;
+    }
+
+}
+
