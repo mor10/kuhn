@@ -1,4 +1,4 @@
-.site-content {
+.site-main {
     padding: 1em;
     max-width: 45em;
     margin: 0 auto;
@@ -9,3 +9,44 @@
 
 }
 
+@supports (display: grid) {
+    @media screen and (min-width: $query__medium) {
+
+        .site {
+            display: grid;
+            grid-template-columns: 15em 1fr;
+            grid-template-rows: 1fr minmax(1em, auto);
+            grid-template-areas: "header main"
+                                 "header sidebar"
+                                 "header footer";
+        }
+
+        .site-header {
+            grid-area: header;
+        }
+
+        .site-main {
+            grid-area: main;
+        }
+
+        .widget-area {
+            grid-area: sidebar;
+        }
+
+        .site-footer {
+            grid-area: footer;
+        }
+    }
+
+    @media screen and (min-width: $query__wide) {
+
+        .site {
+            display: grid;
+            grid-template-columns: 15em 1fr 15em;
+            grid-template-rows: 1fr minmax(1em, auto);
+            grid-template-areas: "header main sidebar"
+                                 "header footer footer";
+        }
+    }
+
+}

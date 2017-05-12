@@ -48,6 +48,8 @@ html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -265,8 +267,8 @@ select,
 textarea {
 	color: #22262a;
 	font-family: "Rubik", sans-serif;
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 16px;
+	font-size: 1rem;
 	font-weight: 300;
 	line-height: 1.5;
 }
@@ -277,8 +279,8 @@ textarea {
 	input,
 	select,
 	textarea {
-		font-size: 24px;
-		font-size: 1.5rem;
+		font-size: 20px;
+		font-size: 1.25rem;
 	}
 }
 
@@ -650,7 +652,7 @@ a:hover, a:active {
 	padding-bottom: 1em;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
 	.nav-links {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -821,7 +823,7 @@ a:hover, a:active {
 }
 
 /* Footer widgets for archive pages */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
 	.archive-view.has-sidebar .footer-widgets {
 		width: 100%;
 	}
@@ -1257,15 +1259,52 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Global layouts
 --------------------------------------------------------------*/
-.site-content {
+.site-main {
 	padding: 1em;
 	max-width: 45em;
 	margin: 0 auto;
 }
 
 @media screen and (min-width: 600px) {
-	.site-content {
+	.site-main {
 		padding: 2em;
+	}
+}
+
+@supports ((display: -ms-grid) or (display: grid)) {
+	@media screen and (min-width: 56.25em) {
+		.site {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 15em 1fr;
+			    grid-template-columns: 15em 1fr;
+			-ms-grid-rows: 1fr minmax(1em, auto);
+			    grid-template-rows: 1fr minmax(1em, auto);
+			grid-template-areas: "header main" "header sidebar" "header footer";
+		}
+		.site-header {
+			grid-area: header;
+		}
+		.site-main {
+			grid-area: main;
+		}
+		.widget-area {
+			grid-area: sidebar;
+		}
+		.site-footer {
+			grid-area: footer;
+		}
+	}
+	@media screen and (min-width: 1600px) {
+		.site {
+			display: -ms-grid;
+			display: grid;
+			-ms-grid-columns: 15em 1fr 15em;
+			    grid-template-columns: 15em 1fr 15em;
+			-ms-grid-rows: 1fr minmax(1em, auto);
+			    grid-template-rows: 1fr minmax(1em, auto);
+			grid-template-areas: "header main sidebar" "header footer footer";
+		}
 	}
 }
 
@@ -1297,13 +1336,6 @@ a:hover, a:active {
 	.site-header {
 		padding: 1em 2em;
 	}
-}
-
-.site-branding {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	min-height: 65px;
 }
 
 .custom-logo-link {
@@ -1354,23 +1386,32 @@ a:hover, a:active {
 	font-weight: 100;
 }
 
-@media screen and (min-width: 900px) {
-	.site-header {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: justify;
-		    -ms-flex-pack: justify;
-		        justify-content: space-between;
+@media screen and (min-width: 56.25em) {
+	@supports not ((display: -ms-grid) or (display: grid)) {
+		.site-header {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			    -ms-flex-pack: justify;
+			        justify-content: space-between;
+		}
+		.site-branding {
+			width: 35%;
+			-webkit-box-flex: 1;
+			    -ms-flex: 1 0 auto;
+			        flex: 1 0 auto;
+		}
+		.site-navigation {
+			width: 55%;
+		}
 	}
-	.site-branding {
-		width: 35%;
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 0 auto;
-		        flex: 1 0 auto;
-	}
-	.site-navigation {
-		width: 55%;
+	@supports ((display: -ms-grid) or (display: grid)) {
+		.site-header {
+			position: fixed;
+			width: 15em;
+			height: 100vh;
+		}
 	}
 }
 
@@ -1379,7 +1420,8 @@ Header Menu
 */
 .main-navigation {
 	display: block;
-	font-weight: 400;
+	font-family: "Roboto Mono", sans-serif;
+	font-size: 90%;
 	clear: left;
 }
 
@@ -1401,10 +1443,7 @@ Header Menu
 }
 
 .main-navigation ul a {
-	padding-left: .6em;
 	color: white;
-	font-weight: 100;
-	-webkit-font-smoothing: antialiased;
 }
 
 .main-navigation ul ul {
@@ -1437,10 +1476,6 @@ Header Menu
 	padding-left: 1.4em;
 }
 
-.main-navigation ul ul a {
-	/*width: 200px;*/
-}
-
 .main-navigation li {
 	position: relative;
 }
@@ -1448,7 +1483,7 @@ Header Menu
 .main-navigation a {
 	display: inline-block;
 	width: 100%;
-	padding: .5em 1em .5em 0;
+	padding: .5em 0;
 	text-decoration: none;
 	color: #22262a;
 }
@@ -1498,54 +1533,66 @@ button.dropdown-toggle {
 	display: block;
 }
 
-@media screen and (min-width: 600px) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation .menu-item-has-children > a,
-	.main-navigation .page_item_has_children > a {
-		padding-right: 2em;
-	}
-	.main-navigation ul {
-		display: block;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-wrap: wrap;
-		    flex-wrap: wrap;
-	}
-	.main-navigation ul ul {
-		-webkit-box-orient: vertical;
-		-webkit-box-direction: normal;
-		    -ms-flex-direction: column;
-		        flex-direction: column;
-		margin-left: 0;
-	}
-	.main-navigation ul ul li {
-		padding-left: 0;
-	}
-	.main-navigation ul ul li a {
-		width: 218px;
-	}
-	.main-navigation ul a {
-		padding: .4em 1em;
-		background: rgba(255, 255, 255, 0.05);
+@supports ((display: -ms-grid) or (display: grid)) {
+	@media screen and (min-width: 56.25em) {
+		.menu-toggle {
+			display: none;
+		}
+		.main-navigation ul {
+			display: block;
+		}
 	}
 }
 
-@media screen and (min-width: 900px) {
-	.main-navigation ul {
-		-webkit-box-pack: end;
-		    -ms-flex-pack: end;
-		        justify-content: flex-end;
-		padding-top: 0;
-		/* If you want dropdowns to open on hover, uncomment this: */
-		/*
-			li:hover > ul,
-				li:focus > ul {
-				display: block;
-			}
-			*/
+@supports not ((display: -ms-grid) or (display: grid)) {
+	@media screen and (min-width: 56.25em) {
+		.menu-toggle {
+			display: none;
+		}
+		.main-navigation .menu-item-has-children > a,
+		.main-navigation .page_item_has_children > a {
+			padding-right: 2em;
+		}
+		.main-navigation ul {
+			display: block;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			    flex-wrap: wrap;
+		}
+		.main-navigation ul ul {
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			    -ms-flex-direction: column;
+			        flex-direction: column;
+			margin-left: 0;
+		}
+		.main-navigation ul ul li {
+			padding-left: 0;
+		}
+		.main-navigation ul ul li a {
+			width: 218px;
+		}
+		.main-navigation ul a {
+			padding: .4em 1em;
+			background: rgba(255, 255, 255, 0.05);
+		}
+	}
+	@media screen and (min-width: 56.25em) {
+		.main-navigation ul {
+			-webkit-box-pack: end;
+			    -ms-flex-pack: end;
+			        justify-content: flex-end;
+			padding-top: 0;
+			/* If you want dropdowns to open on hover, uncomment this: */
+			/*
+				li:hover > ul,
+					li:focus > ul {
+					display: block;
+				}
+				*/
+		}
 	}
 }
 
@@ -1577,7 +1624,7 @@ button.dropdown-toggle {
 	text-transform: uppercase;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
 	.entry-title {
 		font-size: 3em;
 	}
@@ -1703,13 +1750,13 @@ button.dropdown-toggle {
 	padding-left: 0;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
 	.children {
 		margin-left: 2em;
 	}
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
 	.no-sidebar .children {
 		margin-left: 2em;
 	}
@@ -1877,7 +1924,7 @@ button.dropdown-toggle {
 	padding: 0 2em;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
 	.site-footer__wrap {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -1895,7 +1942,7 @@ button.dropdown-toggle {
 	    align-self: center;
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
 	.site-info {
 		text-align: right;
 	}
@@ -2002,7 +2049,7 @@ object {
 	}
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 56.25em) {
 	.wp-caption .wp-caption-text {
 		margin-left: 0;
 	}
@@ -2011,19 +2058,6 @@ object {
 /*--------------------------------------------------------------
 ## Images
 --------------------------------------------------------------*/
-.wp-caption.aligncenter,
-.centered-image {
-	max-width: 100vw;
-	margin: 0 -1em;
-}
-
-@media screen and (min-width: 600px) {
-	.wp-caption.aligncenter,
-	.centered-image {
-		margin: 0 -2em;
-	}
-}
-
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/

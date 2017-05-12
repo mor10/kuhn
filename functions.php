@@ -92,28 +92,24 @@ function kuhn_fonts_url() {
 
 	/**
 	 * Translators: If there are characters in your language that are not
-	 * supported by Slabo 27px, Playfair Display, and Yanone Kaffeesatz translate this to 'off'. Do not translate
+	 * supported by Rubik and Roboto Mono translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$vollkorn = _x( 'on', 'Vollkorn font: on or off', 'kuhn' );
-	$yanone_kaffeesatz = _x( 'on', 'Yanone Kaffeesatz font: on or off', 'kuhn' );
+	$rubik = _x( 'on', 'Rubik font: on or off', 'kuhn' );
+	$roboto_mono = _x( 'on', 'Yanone Kaffeesatz font: on or off', 'kuhn' );
 	$slabo = _x( 'on', 'Slabo 27px font: on or off', 'kuhn' );
 
 	$font_families = array();
 
-	if ( 'off' !== $vollkorn ) {
+	if ( 'off' !== $rubik ) {
 		$font_families[] = 'Rubik:300,300i,500,500i,700';
 	}
 
-	if ( 'off' !== $yanone_kaffeesatz ) {
+	if ( 'off' !== $roboto_mono ) {
 		$font_families[] = 'Roboto Mono:400,400i,700,700i';
 	}
 
-	if ( 'off' !== $slabo ) {
-		$font_families[] = 'Slabo 27px';
-	}
-
-	if ( in_array( 'on', array($vollkorn, $yanone_kaffeesatz, $slabo) ) ) {
+	if ( in_array( 'on', array($rubik, $roboto_mono) ) ) {
 
 		$query_args = array(
 			'family' => urlencode( implode( '|', $font_families ) ),

@@ -21,8 +21,7 @@
 }
 
 .site-branding {
-	display: flex;
-	min-height: 65px;
+
 }
 
 .custom-logo-link {
@@ -66,20 +65,33 @@
 	font-weight: 100;
 }
 
+
 @media screen and (min-width: $query__medium) {
-	.site-header {
-		display: flex;
-		justify-content: space-between;
+
+	@supports not (display: grid) {
+		.site-header {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.site-branding {
+			width: 35%;
+			flex: 1 0 auto;
+		}
+
+		.site-navigation {
+			width: 55%;
+		}
 	}
 
-	.site-branding {
-		width: 35%;
-		flex: 1 0 auto;
+	@supports (display: grid) {
+		.site-header {
+			position: fixed;
+			width: 15em;
+			height: 100vh;
+		}
 	}
 
-	.site-navigation {
-		width: 55%;
-	}
 }
 
 /*

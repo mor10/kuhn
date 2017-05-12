@@ -1,7 +1,7 @@
 .main-navigation {
 	display: block;
-
-	font-weight: 400;
+	font-family: $font__meta;
+	font-size: 90%;
 	clear: left;
 
 	ul {
@@ -21,10 +21,7 @@
 			}
 
 		a {
-			padding-left: .6em;
 			color: white;
-			font-weight: 100;
-			-webkit-font-smoothing: antialiased;
 		}
 
 		ul {
@@ -66,7 +63,7 @@
 			}
 
 			a {
-				/*width: 200px;*/
+
 			}
 
 		}
@@ -81,7 +78,7 @@
 	a {
 		display: inline-block;
 		width: 100%;
-		padding: .5em 1em .5em 0;
+		padding: .5em 0;
 		text-decoration: none;
 		color: $color__text-main;
 	}
@@ -137,64 +134,79 @@ button.dropdown-toggle {
 	display: block;
 }
 
-@media screen and (min-width: $query__small) {
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation {
-
-		.menu-item-has-children > a,
-		.page_item_has_children > a {
-			padding-right: 2em;
+@supports (display: grid) {
+	@media screen and (min-width: $query__medium) {
+		.menu-toggle {
+			display: none;
 		}
 
-		ul {
+		.main-navigation ul {
 			display: block;
-			display: flex;
-			flex-wrap: wrap;
-
-			ul {
-				flex-direction: column;
-				margin-left: 0;
-
-				li {
-					padding-left: 0;
-
-					a {
-						width: 218px;
-					}
-				}
-			}
-
-
-			a {
-				padding: .4em 1em;
-				background: hsla(0,0%,100%,.05);
-
-			}
-
 		}
-
 	}
-
 }
 
-@media screen and (min-width: $query__medium) {
-	.main-navigation {
+@supports not (display: grid) {
 
-		ul {
-			justify-content: flex-end;
-			padding-top: 0;
-
-			/* If you want dropdowns to open on hover, uncomment this: */
-			/*
-			li:hover > ul,
-				li:focus > ul {
-				display: block;
-			}
-			*/
+	@media screen and (min-width: $query__medium) {
+		.menu-toggle {
+			display: none;
 		}
 
+		.main-navigation {
+
+			.menu-item-has-children > a,
+			.page_item_has_children > a {
+				padding-right: 2em;
+			}
+
+			ul {
+				display: block;
+				display: flex;
+				flex-wrap: wrap;
+
+				ul {
+					flex-direction: column;
+					margin-left: 0;
+
+					li {
+						padding-left: 0;
+
+						a {
+							width: 218px;
+						}
+					}
+				}
+
+
+				a {
+					padding: .4em 1em;
+					background: hsla(0,0%,100%,.05);
+
+				}
+
+			}
+
+		}
+
+	}
+
+	@media screen and (min-width: $query__medium) {
+		.main-navigation {
+
+			ul {
+				justify-content: flex-end;
+				padding-top: 0;
+
+				/* If you want dropdowns to open on hover, uncomment this: */
+				/*
+				li:hover > ul,
+					li:focus > ul {
+					display: block;
+				}
+				*/
+			}
+
+		}
 	}
 }
