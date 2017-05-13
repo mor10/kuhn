@@ -87,8 +87,9 @@
 	@supports (display: grid) {
 		.site-header {
 			position: fixed;
-			width: 15em;
+			width: 16.5em;
 			height: 100vh;
+			box-shadow: 4px 0 5px hsla(0,0%,20%,.5)
 		}
 	}
 

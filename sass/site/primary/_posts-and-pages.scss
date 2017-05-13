@@ -2,9 +2,87 @@
 	display: block;
 }
 
-.hentry {
-	margin: 0 0 1.5em;
+
+
+body:not(.archive-view) {
+
+	.hentry {
+		margin: 0 0 1.5em;
+	}
+
+	.site-main {
+		padding: 1em;
+		@media screen and (min-width: $query__small) {
+			padding: 2em;
+		}
+	}
+
+	@supports (display: grid) {
+		@media screen and (min-width: $query__medium) {
+
+			.site-main {
+				display: grid;
+				grid-template-columns: 1fr minmax(auto, 46em) 1fr;
+				align-content: start;
+				grid-template-areas:
+					". post ."
+					". nav ."
+					". comments .";
+			}
+
+			.post {
+				grid-area: post;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				grid-template-areas:
+					"header header header header"
+					"meta meta meta meta"
+					"featimg featimg featimg featimg"
+					"content content content content"
+					"footer footer footer footer";
+
+				@media screen and (min-width: $query__wide) {
+					grid-template-areas:
+						"header header header header"
+						"featimg featimg featimg featimg"
+						"meta content content content"
+						"footer footer footer footer";
+				}
+			}
+
+			.entry-header {
+				grid-area: header;
+			}
+
+			.entry-meta {
+				grid-area: meta;
+			}
+
+			.featured-image {
+				grid-area: featimg;
+			}
+
+			.entry-content {
+				grid-area: content;
+			}
+
+			.entry-footer {
+				grid-area: footer;
+			}
+
+			.post-navigation {
+				grid-area: nav;
+			}
+
+			.comments-area {
+				grid-area: comments;
+			}
+		}
+	}
+
 }
+
+
 
 .cat-links {
 	font-size: 90%;

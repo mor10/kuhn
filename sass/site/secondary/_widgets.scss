@@ -1,14 +1,10 @@
 .widget-area {
 	margin-top: 1.5em;
-}
+	padding: 1em 2em;
 
-/* Footer widgets for archive pages */
-.archive-view {
-	@media screen and (min-width: $query__medium) {
-		&.has-sidebar {
-			.footer-widgets {
-				width: 100%;
-			}
+	@supports (display: grid) {
+		@media screen and (min-width: $query__wide) {
+			margin-top: 0;
 		}
 	}
 }
@@ -213,96 +209,27 @@
 }
 
 
-/* Footer widget stylings */
 
-.footer-widgets {
-	margin: 2em 0 0;
-	padding: 1em 0;
-	background-color: hsl(0, 0%, 10%);
-
-	@media screen and (min-width: $query__small) {
-		padding: 2em 1em;
-	}
-
-	.widget {
-		flex: 1;
-		margin: 0 2em 2em;
-		padding-top: 1em;
-
-		.original-title {
-			color: hsla(0, 0%, 100%, .5);
-		}
-	}
-
-	.widget,
-	.widget-title,
-	.widget a,
-	.widget_calendar thead,
-	.rss-date,
-	.widget_rss cite {
-		color: white;
-	}
-
-	.widget_calendar td,
-	.widget_calendar a {
-		color: black;
-	}
-
-}
-
-.footer-widget-area__wrap {
-	margin: 0 auto;
-
-	@media screen and (min-width: $size__max-width) {
-
-		/* Use flex to create a responsive layout */
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
-
-		/* If only one widget is displayed, make it full width. */
-		.widget:only-of-type {
-			width: 100%;
-		}
-
-		/* If 2 or 3 widgets are displayed, make the second one twice as wide. */
-		.widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
-			flex: 2;
-		}
-
-		/* If 4 or more widgets are displayed, show three across when available. */
-		.widget:nth-last-child(n+4),
-		.widget:nth-last-child(n+4) ~ .widget {
-			width: 30%;
-			flex: 1 1 30%;
-		}
-	}
-
-	@media screen and (min-width: 90em ) {
-		max-width: 70em;
-	}
-
-}
 
 /* Custom Recent Comments and Recent Posts widgets */
 
-.content-area .widget_hume_recent_comments li,
-.content-area .widget_hume_recent_posts li {
+.content-area .widget_kuhn_recent_comments li,
+.content-area .widget_kuhn_recent_posts li {
 	a {
 		color: black;
 	}
 }
 
-.widget_hume_recent_comments li,
-.widget_hume_recent_posts li {
+.widget_kuhn_recent_comments li,
+.widget_kuhn_recent_posts li {
 	position: relative;
 	padding: 0 0 1em 70px;
 	margin-bottom: 2em;
 	border-bottom: 1px solid #c3c3c3;
 }
 
-.widget_hume_recent_comments,
-.widget_hume_recent_posts {
+.widget_kuhn_recent_comments,
+.widget_kuhn_recent_posts {
 
 	ul {
 		margin-top: 2em;
@@ -337,7 +264,7 @@
 }
 
 
-.widget_hume_recent_comments {
+.widget_kuhn_recent_comments {
 
 	.post-icon img {
 		border-radius: 50px;
@@ -388,17 +315,9 @@
 	}
 }
 
-.footer-widgets .widget_hume_recent_comments {
-	a:focus,
-	a:hover {
-		.original-title {
-			color: white;
-		}
-	}
-}
 
 /* Custom Recent Posts widget */
-.widget_hume_recent_posts {
+.widget_kuhn_recent_posts {
 
 	.post-icon {
 		width: 50px;
@@ -430,21 +349,3 @@
 
 }
 
-.footer-widgets .widget_hume_recent_posts {
-	a:hover .title,
-	a:focus .title {
-		color: white;
-	}
-}
-
-.footer-widgets .widget_hume_recent_comments,
-.footer-widgets .widget_hume_recent_posts {
-	li {
-		border-bottom: 1px  dotted white;
-
-		&:last-of-type {
-			border-bottom: none;
-		}
-	}
-
-}
