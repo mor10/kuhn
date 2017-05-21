@@ -103,7 +103,7 @@ function kuhn_fonts_url() {
 	$font_families = array();
 
 	if ( 'off' !== $rubik ) {
-		$font_families[] = 'Rubik:300,300i,500,500i,700';
+		$font_families[] = 'Rubik:300,300i,400,400i';
 	}
 
 	if ( 'off' !== $roboto_mono ) {

@@ -652,7 +652,7 @@ a:hover, a:active {
 	padding-bottom: 1em;
 }
 
-@media screen and (min-width: 56.25em) {
+@media screen and (min-width: 61.875em) {
 	.nav-links {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -1165,7 +1165,6 @@ a:hover, a:active {
 	padding: 1em;
 	max-width: 45em;
 	margin: 0 auto;
-	box-shadow: 4px 0 5px rgba(51, 51, 51, 0.5);
 }
 
 @media screen and (min-width: 600px) {
@@ -1175,7 +1174,7 @@ a:hover, a:active {
 }
 
 @supports ((display: -ms-grid) or (display: grid)) {
-	@media screen and (min-width: 56.25em) {
+	@media screen and (min-width: 61.875em) {
 		.site {
 			display: -ms-grid;
 			display: grid;
@@ -1206,6 +1205,9 @@ a:hover, a:active {
 			    grid-template-rows: 1fr minmax(1em, auto);
 			grid-template-areas: "header main sidebar" "header footer footer";
 		}
+		.widget-area {
+			border-left: 1px solid #22262a;
+		}
 	}
 }
 
@@ -1225,7 +1227,7 @@ a:hover, a:active {
 		max-width: none;
 		padding: 0;
 	}
-	@media screen and (min-width: 56.25em) {
+	@media screen and (min-width: 61.875em) {
 		.archive-view .site-main {
 			display: -ms-grid;
 			display: grid;
@@ -1235,25 +1237,25 @@ a:hover, a:active {
 			background: #cccccc;
 		}
 	}
-	@media screen and (min-width: 56.25em) and (min-width: 1300px) {
+	@media screen and (min-width: 61.875em) and (min-width: 1300px) {
 		.archive-view .site-main {
 			-ms-grid-columns: (calc((100vw - 16.5em - 2px)/3))[3];
 			    grid-template-columns: repeat(3, calc((100vw - 16.5em - 2px)/3));
 		}
 	}
-	@media screen and (min-width: 56.25em) and (min-width: 1800px) {
+	@media screen and (min-width: 61.875em) and (min-width: 1800px) {
 		.archive-view .site-main {
 			-ms-grid-columns: (calc((100vw - 16.5em - 3px)/4))[4];
 			    grid-template-columns: repeat(4, calc((100vw - 16.5em - 3px)/4));
 		}
 	}
-	@media screen and (min-width: 56.25em) and (min-width: 2300px) {
+	@media screen and (min-width: 61.875em) and (min-width: 2300px) {
 		.archive-view .site-main {
 			-ms-grid-columns: (calc((100vw - 16.5em - 4px)/5))[5];
 			    grid-template-columns: repeat(5, calc((100vw - 16.5em - 4px)/5));
 		}
 	}
-	@media screen and (min-width: 56.25em) {
+	@media screen and (min-width: 61.875em) {
 		.archive-view .post {
 			padding: 1em;
 			background: white;
@@ -1350,7 +1352,7 @@ a:hover, a:active {
 	font-weight: 100;
 }
 
-@media screen and (min-width: 56.25em) {
+@media screen and (min-width: 61.875em) {
 	@supports not ((display: -ms-grid) or (display: grid)) {
 		.site-header {
 			display: -webkit-box;
@@ -1375,7 +1377,9 @@ a:hover, a:active {
 			position: fixed;
 			width: 16.5em;
 			height: 100vh;
-			box-shadow: 4px 0 5px rgba(51, 51, 51, 0.5);
+			border-right: 1px solid white;
+			border-bottom: none;
+			overflow-y: scroll;
 		}
 	}
 }
@@ -1499,7 +1503,7 @@ button.dropdown-toggle {
 }
 
 @supports ((display: -ms-grid) or (display: grid)) {
-	@media screen and (min-width: 56.25em) {
+	@media screen and (min-width: 61.875em) {
 		.menu-toggle {
 			display: none;
 		}
@@ -1510,7 +1514,7 @@ button.dropdown-toggle {
 }
 
 @supports not ((display: -ms-grid) or (display: grid)) {
-	@media screen and (min-width: 56.25em) {
+	@media screen and (min-width: 61.875em) {
 		.menu-toggle {
 			display: none;
 		}
@@ -1544,7 +1548,7 @@ button.dropdown-toggle {
 			background: rgba(255, 255, 255, 0.05);
 		}
 	}
-	@media screen and (min-width: 56.25em) {
+	@media screen and (min-width: 61.875em) {
 		.main-navigation ul {
 			-webkit-box-pack: end;
 			    -ms-flex-pack: end;
@@ -1568,6 +1572,10 @@ button.dropdown-toggle {
 	display: block;
 }
 
+.extra {
+	display: none;
+}
+
 body:not(.archive-view) .hentry {
 	margin: 0 0 1.5em;
 }
@@ -1583,7 +1591,7 @@ body:not(.archive-view) .site-main {
 }
 
 @supports ((display: -ms-grid) or (display: grid)) {
-	@media screen and (min-width: 56.25em) {
+	@media screen and (min-width: 61.875em) {
 		body:not(.archive-view) .site-main {
 			display: -ms-grid;
 			display: grid;
@@ -1599,15 +1607,48 @@ body:not(.archive-view) .site-main {
 			display: grid;
 			-ms-grid-columns: (1fr)[4];
 			    grid-template-columns: repeat(4, 1fr);
+			grid-column-gap: 20px;
 			grid-template-areas: "header header header header" "meta meta meta meta" "featimg featimg featimg featimg" "content content content content" "footer footer footer footer";
 		}
+		body:not(.archive-view) .post .entry-meta {
+			margin: -1em 0 1em;
+		}
 	}
-	@media screen and (min-width: 56.25em) and (min-width: 1300px) {
+	@media screen and (min-width: 61.875em) and (min-width: 1300px) {
 		body:not(.archive-view) .post {
 			grid-template-areas: "header header header header" "featimg featimg featimg featimg" "meta content content content" "footer footer footer footer";
 		}
+		body:not(.archive-view) .post .entry-meta {
+			margin-top: 2.1em;
+		}
+		body:not(.archive-view) .post .byline,
+		body:not(.archive-view) .post .posted-on,
+		body:not(.archive-view) .post .comments-link,
+		body:not(.archive-view) .post .edit-link {
+			display: block;
+			margin-bottom: 1em;
+		}
+		body:not(.archive-view) .post .byline:before, body:not(.archive-view) .post .byline:after,
+		body:not(.archive-view) .post .posted-on:before,
+		body:not(.archive-view) .post .posted-on:after,
+		body:not(.archive-view) .post .comments-link:before,
+		body:not(.archive-view) .post .comments-link:after,
+		body:not(.archive-view) .post .edit-link:before,
+		body:not(.archive-view) .post .edit-link:after {
+			margin: 0;
+			content: "";
+		}
+		body:not(.archive-view) .post .byline a,
+		body:not(.archive-view) .post .posted-on a,
+		body:not(.archive-view) .post .comments-link a,
+		body:not(.archive-view) .post .edit-link a {
+			display: block;
+		}
+		body:not(.archive-view) .post .extra {
+			display: inline;
+		}
 	}
-	@media screen and (min-width: 56.25em) {
+	@media screen and (min-width: 61.875em) {
 		body:not(.archive-view) .entry-header {
 			grid-area: header;
 		}
@@ -1619,6 +1660,7 @@ body:not(.archive-view) .site-main {
 		}
 		body:not(.archive-view) .entry-content {
 			grid-area: content;
+			max-width: 100%;
 		}
 		body:not(.archive-view) .entry-footer {
 			grid-area: footer;
@@ -1649,7 +1691,7 @@ body:not(.archive-view) .site-main {
 	text-transform: uppercase;
 }
 
-@media screen and (min-width: 56.25em) {
+@media screen and (min-width: 61.875em) {
 	.entry-title {
 		font-size: 3em;
 	}
@@ -1676,13 +1718,14 @@ body:not(.archive-view) .site-main {
 	font-weight: 700;
 	text-decoration: none;
 	color: black;
+	border-bottom: 3px solid transparent;
 }
 
 .entry-meta a:focus, .entry-meta a:hover,
 .entry-footer a:focus,
 .entry-footer a:hover {
 	color: black;
-	border-bottom: 3px solid;
+	border-bottom-color: black;
 }
 
 .byline::after {
@@ -1775,13 +1818,13 @@ body:not(.archive-view) .site-main {
 	padding-left: 0;
 }
 
-@media screen and (min-width: 56.25em) {
+@media screen and (min-width: 61.875em) {
 	.children {
 		margin-left: 2em;
 	}
 }
 
-@media screen and (min-width: 56.25em) {
+@media screen and (min-width: 61.875em) {
 	.no-sidebar .children {
 		margin-left: 2em;
 	}
@@ -1949,7 +1992,7 @@ body:not(.archive-view) .site-main {
 	padding: 0 2em;
 }
 
-@media screen and (min-width: 56.25em) {
+@media screen and (min-width: 61.875em) {
 	.site-footer__wrap {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -1967,7 +2010,7 @@ body:not(.archive-view) .site-main {
 	    align-self: center;
 }
 
-@media screen and (min-width: 56.25em) {
+@media screen and (min-width: 61.875em) {
 	.site-info {
 		text-align: right;
 	}
@@ -2074,7 +2117,7 @@ object {
 	}
 }
 
-@media screen and (min-width: 56.25em) {
+@media screen and (min-width: 61.875em) {
 	.wp-caption .wp-caption-text {
 		margin-left: 0;
 	}

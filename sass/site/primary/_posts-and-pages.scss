@@ -2,7 +2,9 @@
 	display: block;
 }
 
-
+.extra {
+	display: none;
+}
 
 body:not(.archive-view) {
 
@@ -12,9 +14,11 @@ body:not(.archive-view) {
 
 	.site-main {
 		padding: 1em;
+
 		@media screen and (min-width: $query__small) {
 			padding: 2em;
 		}
+
 	}
 
 	@supports (display: grid) {
@@ -34,6 +38,7 @@ body:not(.archive-view) {
 				grid-area: post;
 				display: grid;
 				grid-template-columns: repeat(4, 1fr);
+				grid-column-gap: 20px;
 				grid-template-areas:
 					"header header header header"
 					"meta meta meta meta"
@@ -41,12 +46,42 @@ body:not(.archive-view) {
 					"content content content content"
 					"footer footer footer footer";
 
+				.entry-meta {
+					margin: -1em 0 1em;
+				}
+
 				@media screen and (min-width: $query__wide) {
 					grid-template-areas:
 						"header header header header"
 						"featimg featimg featimg featimg"
 						"meta content content content"
 						"footer footer footer footer";
+
+					.entry-meta {
+						margin-top: 2.1em;
+					}
+
+					.byline,
+					.posted-on,
+					.comments-link,
+					.edit-link {
+						display: block;
+						margin-bottom: 1em;
+
+						&:before,
+						&:after {
+							margin: 0;
+							content: "";
+						}
+
+						a {
+							display: block;
+						}
+					}
+
+					.extra {
+						display: inline;
+					}
 				}
 			}
 
@@ -64,6 +99,7 @@ body:not(.archive-view) {
 
 			.entry-content {
 				grid-area: content;
+				max-width: 100%;
 			}
 
 			.entry-footer {
@@ -77,6 +113,7 @@ body:not(.archive-view) {
 			.comments-area {
 				grid-area: comments;
 			}
+
 		}
 	}
 
@@ -130,11 +167,12 @@ body:not(.archive-view) {
 		font-weight: 700;
 		text-decoration: none;
 		color: black;
+		border-bottom: 3px solid transparent;
 
 		&:focus,
 		&:hover {
 			color: black;
-			border-bottom: 3px solid;
+			border-bottom-color: black;
 		}
 	}
 }

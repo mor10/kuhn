@@ -2,7 +2,6 @@
     padding: 1em;
     max-width: 45em;
     margin: 0 auto;
-    box-shadow: 4px 0 5px hsla(0,0%,20%,.5);
 
     @media screen and (min-width: $query__small) {
         padding: 2em;
@@ -38,6 +37,7 @@
         .site-footer {
             grid-area: footer;
         }
+
     }
 
     @media screen and (min-width: $query__x_wide) {
@@ -48,6 +48,10 @@
             grid-template-areas:
                 "header main sidebar"
                 "header footer footer";
+        }
+
+        .widget-area {
+            border-left: 1px solid $color__grey_black;
         }
     }
 

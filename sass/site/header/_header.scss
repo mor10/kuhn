@@ -89,7 +89,9 @@
 			position: fixed;
 			width: 16.5em;
 			height: 100vh;
-			box-shadow: 4px 0 5px hsla(0,0%,20%,.5)
+			border-right: 1px solid white;
+			border-bottom: none;
+			overflow-y: scroll;
 		}
 	}
 
