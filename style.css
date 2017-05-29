@@ -819,14 +819,48 @@ a:hover, a:active {
 # Widgets
 --------------------------------------------------------------*/
 .widget-area {
-	margin-top: 1.5em;
-	padding: 1em 2em;
+	padding: 1.5em 2em;
 }
 
 @supports ((display: -ms-grid) or (display: grid)) {
 	@media screen and (min-width: 1300px) {
 		.widget-area {
 			margin-top: 0;
+		}
+	}
+}
+
+@supports ((display: -ms-grid) or (display: grid)) {
+	@media screen and (min-width: 61.875em) {
+		.archive-view .widget-area {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			    flex-wrap: wrap;
+			-webkit-box-pack: justify;
+			    -ms-flex-pack: justify;
+			        justify-content: space-between;
+			background-color: #f2f2f2;
+			border-top: 1px solid white;
+		}
+		.archive-view .widget-area .widget {
+			width: 47.5%;
+		}
+	}
+	@media screen and (min-width: 61.875em) and (min-width: 1300px) {
+		.archive-view .widget-area .widget {
+			width: 30%;
+		}
+	}
+	@media screen and (min-width: 61.875em) and (min-width: 1800px) {
+		.archive-view .widget-area .widget {
+			width: 22.5%;
+		}
+	}
+	@media screen and (min-width: 61.875em) and (min-width: 2300px) {
+		.archive-view .widget-area .widget {
+			width: 18.5%;
 		}
 	}
 }
