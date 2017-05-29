@@ -135,44 +135,40 @@ button.dropdown-toggle {
 }
 
 
-// @supports not (display: grid) {
+@media screen and (min-width: $query__small) and (max-width: $query__medium) {
+	.menu-toggle {
+		display: none;
+	}
 
-	@media screen and (min-width: $query__small) and (max-width: $query__medium) {
-		.menu-toggle {
-			display: none;
+	.main-navigation {
+
+		.menu-item-has-children > a,
+		.page_item_has_children > a {
+			padding-right: 2em;
 		}
 
-		.main-navigation {
-
-			.menu-item-has-children > a,
-			.page_item_has_children > a {
-				padding-right: 2em;
-			}
+		ul {
+			display: block;
+			display: flex;
+			flex-wrap: wrap;
 
 			ul {
-				display: block;
-				display: flex;
-				flex-wrap: wrap;
+				flex-direction: column;
+				margin-left: 0;
 
-				ul {
-					flex-direction: column;
-					margin-left: 0;
+				li {
+					padding-left: 0;
 
-					li {
-						padding-left: 0;
-
-						a {
-							width: 218px;
-						}
+					a {
+						width: 218px;
 					}
 				}
+			}
 
 
-				a {
-					padding: .4em 1em;
-					background: hsla(0,0%,100%,.05);
-
-				}
+			a {
+				padding: .4em 1em;
+				background: hsla(0,0%,100%,.05);
 
 			}
 
@@ -180,25 +176,18 @@ button.dropdown-toggle {
 
 	}
 
-	@media screen and (min-width: $query__medium) {
-		.main-navigation {
+}
 
-			ul {
-				justify-content: flex-end;
-				padding-top: 0;
+@media screen and (min-width: $query__medium) {
+	.main-navigation {
 
-				/* If you want dropdowns to open on hover, uncomment this: */
-				/*
-				li:hover > ul,
-					li:focus > ul {
-					display: block;
-				}
-				*/
-			}
-
+		ul {
+			justify-content: flex-end;
+			padding-top: 0;
 		}
+
 	}
-// }
+}
 
 
 @supports (display: grid) {
