@@ -1,6 +1,5 @@
 .widget-area {
-	margin-top: 1.5em;
-	padding: 1em 2em;
+	padding: 1.5em 2em;
 
 	@supports (display: grid) {
 		@media screen and (min-width: $query__wide) {
@@ -9,6 +8,36 @@
 	}
 }
 
+@supports (display: grid) {
+	@media screen and (min-width: $query__medium) {
+
+		.archive-view .widget-area {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			background-color: $color__grey_x_light;
+			border-top: 1px solid white;
+
+			.widget {
+				width: 47.5%;
+
+				@media screen and (min-width: $query__wide) {
+					width: 30%;
+				}
+
+				@media screen and (min-width: $query__x_wide) {
+					width: 22.5%;
+				}
+
+				@media screen and (min-width: $query__xx_wide) {
+					width: 18.5%;
+				}
+			}
+		}
+
+
+	}
+}
 .widget {
 	margin: 0 0 2em;
 	padding: 0 0 2em;
