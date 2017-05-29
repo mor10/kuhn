@@ -1570,6 +1570,57 @@ button.dropdown-toggle {
 	display: block;
 }
 
+@media screen and (min-width: 600px) and (max-width: 61.875em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation .menu-item-has-children > a,
+	.main-navigation .page_item_has_children > a {
+		padding-right: 2em;
+	}
+	.main-navigation ul {
+		display: block;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+	}
+	.main-navigation ul ul {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		margin-left: 0;
+	}
+	.main-navigation ul ul li {
+		padding-left: 0;
+	}
+	.main-navigation ul ul li a {
+		width: 218px;
+	}
+	.main-navigation ul a {
+		padding: .4em 1em;
+		background: rgba(255, 255, 255, 0.05);
+	}
+}
+
+@media screen and (min-width: 61.875em) {
+	.main-navigation ul {
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+		padding-top: 0;
+		/* If you want dropdowns to open on hover, uncomment this: */
+		/*
+				li:hover > ul,
+					li:focus > ul {
+					display: block;
+				}
+				*/
+	}
+}
+
 @supports ((display: -ms-grid) or (display: grid)) {
 	@media screen and (min-width: 61.875em) {
 		.menu-toggle {
@@ -1577,58 +1628,7 @@ button.dropdown-toggle {
 		}
 		.main-navigation ul {
 			display: block;
-		}
-	}
-}
-
-@supports not ((display: -ms-grid) or (display: grid)) {
-	@media screen and (min-width: 61.875em) {
-		.menu-toggle {
-			display: none;
-		}
-		.main-navigation .menu-item-has-children > a,
-		.main-navigation .page_item_has_children > a {
-			padding-right: 2em;
-		}
-		.main-navigation ul {
-			display: block;
-			display: -webkit-box;
-			display: -ms-flexbox;
-			display: flex;
-			-ms-flex-wrap: wrap;
-			    flex-wrap: wrap;
-		}
-		.main-navigation ul ul {
-			-webkit-box-orient: vertical;
-			-webkit-box-direction: normal;
-			    -ms-flex-direction: column;
-			        flex-direction: column;
-			margin-left: 0;
-		}
-		.main-navigation ul ul li {
-			padding-left: 0;
-		}
-		.main-navigation ul ul li a {
-			width: 218px;
-		}
-		.main-navigation ul a {
-			padding: .4em 1em;
-			background: rgba(255, 255, 255, 0.05);
-		}
-	}
-	@media screen and (min-width: 61.875em) {
-		.main-navigation ul {
-			-webkit-box-pack: end;
-			    -ms-flex-pack: end;
-			        justify-content: flex-end;
-			padding-top: 0;
-			/* If you want dropdowns to open on hover, uncomment this: */
-			/*
-				li:hover > ul,
-					li:focus > ul {
-					display: block;
-				}
-				*/
+			padding-top: 2em;
 		}
 	}
 }
