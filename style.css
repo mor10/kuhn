@@ -730,7 +730,6 @@ a:hover, a:active {
 .pagination a,
 .pagination span {
 	padding: .5em 1em;
-	background: white;
 }
 
 .pagination a {
