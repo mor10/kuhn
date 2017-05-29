@@ -1,6 +1,7 @@
 .archive-view {
 
     .post {
+        padding: 1em;
         &:after {
             display: block;
             margin: 4em 0;
@@ -40,7 +41,6 @@
             }
 
             .post {
-                padding: 1em;
                 background: white;
 
                 &:after {

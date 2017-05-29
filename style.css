@@ -1214,6 +1214,10 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Archives
 --------------------------------------------------------------*/
+.archive-view .post {
+	padding: 1em;
+}
+
 .archive-view .post:after {
 	display: block;
 	margin: 4em 0;
@@ -1257,7 +1261,6 @@ a:hover, a:active {
 	}
 	@media screen and (min-width: 61.875em) {
 		.archive-view .post {
-			padding: 1em;
 			background: white;
 		}
 		.archive-view .post:after {
