@@ -35,7 +35,7 @@
 }
 
 @supports (display: grid) {
-    .site-main {
+    .archive-view .site-main {
         max-width: none;
         padding: 0;
     }

@@ -267,8 +267,8 @@ select,
 textarea {
 	color: #22262a;
 	font-family: "Rubik", sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 17.6px;
+	font-size: 1.1rem;
 	font-weight: 300;
 	line-height: 1.5;
 }
@@ -287,6 +287,7 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-weight: 700;
+	line-height: 1.3em;
 }
 
 h1 {
@@ -1196,13 +1197,19 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .site-main {
 	padding: 1em;
-	max-width: 45em;
+	max-width: 40em;
 	margin: 0 auto;
 }
 
 @media screen and (min-width: 600px) {
 	.site-main {
 		padding: 2em;
+	}
+}
+
+@media screen and (min-width: 1300px) {
+	.site-main {
+		max-width: 45em;
 	}
 }
 
@@ -1284,7 +1291,7 @@ a:hover, a:active {
 }
 
 @supports ((display: -ms-grid) or (display: grid)) {
-	.site-main {
+	.archive-view .site-main {
 		max-width: none;
 		padding: 0;
 	}
