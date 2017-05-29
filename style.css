@@ -1675,6 +1675,7 @@ body:not(.archive-view) .site-main {
 }
 
 .cat-links {
+	font-family: "Roboto Mono", sans-serif;
 	font-size: 90%;
 	font-weight: 700;
 }
@@ -1682,6 +1683,11 @@ body:not(.archive-view) .site-main {
 .cat-links a {
 	text-decoration: none;
 	text-transform: uppercase;
+	border-bottom: 3px solid transparent;
+}
+
+.cat-links a:focus, .cat-links a:hover {
+	border-bottom-color: black;
 }
 
 .entry-title {

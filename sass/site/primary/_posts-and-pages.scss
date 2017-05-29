@@ -122,16 +122,18 @@ body:not(.archive-view) {
 
 
 .cat-links {
+	font-family: $font__meta;
 	font-size: 90%;
 	font-weight: 700;
 
 	a {
 		text-decoration: none;
 		text-transform: uppercase;
+		border-bottom: 3px solid transparent;
 
 		&:focus,
 		&:hover {
-
+			border-bottom-color: black;
 		}
 	}
 }
