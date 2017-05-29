@@ -1,3 +1,25 @@
+.page-header {
+    padding: 1em;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+}
+
+.page-title {
+    width: 100%;
+    margin: 0;
+    font-family: $font__meta;
+    font-size: 1.6em;
+    line-height: 1.3em;
+    color: $color__grey_black;
+    word-break: break-word;
+}
+
+.archive-description {
+    font-family: $font__meta;
+    font-size: 90%;
+}
+
 .archive-view {
 
     .post {
@@ -22,21 +44,22 @@
         .archive-view {
 
             .site-main {
+                padding: 8px;
                 display: grid;
-                grid-template-columns: repeat(2,calc((100vw - 16.5em - 1px)/2));
-                grid-gap: 1px;
+                grid-template-columns: repeat(2,calc((100vw - 16.5em - 24px)/2));
+                grid-gap: 8px;
                 background: $color__grey_light;
 
                 @media screen and (min-width: $query__wide) {
-                    grid-template-columns: repeat(3,calc((100vw - 16.5em - 2px)/3));
+                    grid-template-columns: repeat(3,calc((100vw - 16.5em - 32px)/3));
                 }
 
                 @media screen and (min-width: $query__x_wide) {
-                    grid-template-columns: repeat(4,calc((100vw - 16.5em - 3px)/4));
+                    grid-template-columns: repeat(4,calc((100vw - 16.5em - 40px)/4));
                 }
 
                 @media screen and (min-width: $query__xx_wide) {
-                    grid-template-columns: repeat(5,calc((100vw - 16.5em - 4px)/5));
+                    grid-template-columns: repeat(5,calc((100vw - 16.5em - 48px)/5));
                 }
             }
 

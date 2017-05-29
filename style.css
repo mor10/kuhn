@@ -1248,6 +1248,30 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Archives
 --------------------------------------------------------------*/
+.page-header {
+	padding: 1em;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
+}
+
+.page-title {
+	width: 100%;
+	margin: 0;
+	font-family: "Roboto Mono", sans-serif;
+	font-size: 1.6em;
+	line-height: 1.3em;
+	color: #22262a;
+	word-break: break-word;
+}
+
+.archive-description {
+	font-family: "Roboto Mono", sans-serif;
+	font-size: 90%;
+}
+
 .archive-view .post {
 	padding: 1em;
 }
@@ -1267,30 +1291,31 @@ a:hover, a:active {
 	}
 	@media screen and (min-width: 61.875em) {
 		.archive-view .site-main {
+			padding: 8px;
 			display: -ms-grid;
 			display: grid;
-			-ms-grid-columns: (calc((100vw - 16.5em - 1px)/2))[2];
-			    grid-template-columns: repeat(2, calc((100vw - 16.5em - 1px)/2));
-			grid-gap: 1px;
+			-ms-grid-columns: (calc((100vw - 16.5em - 24px)/2))[2];
+			    grid-template-columns: repeat(2, calc((100vw - 16.5em - 24px)/2));
+			grid-gap: 8px;
 			background: #cccccc;
 		}
 	}
 	@media screen and (min-width: 61.875em) and (min-width: 1300px) {
 		.archive-view .site-main {
-			-ms-grid-columns: (calc((100vw - 16.5em - 2px)/3))[3];
-			    grid-template-columns: repeat(3, calc((100vw - 16.5em - 2px)/3));
+			-ms-grid-columns: (calc((100vw - 16.5em - 32px)/3))[3];
+			    grid-template-columns: repeat(3, calc((100vw - 16.5em - 32px)/3));
 		}
 	}
 	@media screen and (min-width: 61.875em) and (min-width: 1800px) {
 		.archive-view .site-main {
-			-ms-grid-columns: (calc((100vw - 16.5em - 3px)/4))[4];
-			    grid-template-columns: repeat(4, calc((100vw - 16.5em - 3px)/4));
+			-ms-grid-columns: (calc((100vw - 16.5em - 40px)/4))[4];
+			    grid-template-columns: repeat(4, calc((100vw - 16.5em - 40px)/4));
 		}
 	}
 	@media screen and (min-width: 61.875em) and (min-width: 2300px) {
 		.archive-view .site-main {
-			-ms-grid-columns: (calc((100vw - 16.5em - 4px)/5))[5];
-			    grid-template-columns: repeat(5, calc((100vw - 16.5em - 4px)/5));
+			-ms-grid-columns: (calc((100vw - 16.5em - 48px)/5))[5];
+			    grid-template-columns: repeat(5, calc((100vw - 16.5em - 48px)/5));
 		}
 	}
 	@media screen and (min-width: 61.875em) {
