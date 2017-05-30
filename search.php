@@ -9,6 +9,15 @@
 
 get_header(); ?>
 
+<?php
+if ( !have_posts() ) :
+
+get_template_part( 'template-parts/content', 'none' );
+return;
+
+endif;
+?>
+
 	<main id="main" class="site-main" role="main">
 
 	<?php
