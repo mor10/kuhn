@@ -1348,16 +1348,6 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
-.header-image {
-	max-height: 60vh;
-	overflow: hidden;
-}
-
-.header-image img {
-	display: block;
-	width: 100vw;
-}
-
 .site-header {
 	position: relative;
 	padding: 1em;
@@ -1372,13 +1362,27 @@ a:hover, a:active {
 	}
 }
 
+.site-branding {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
 .custom-logo-link {
-	margin-right: 1em;
+	display: block;
+	padding: 1em;
 }
 
 .custom-logo-link img {
 	display: block;
-	height: 65px;
+	height: 95px;
 	width: auto;
 }
 
@@ -1397,7 +1401,7 @@ a:hover, a:active {
 }
 
 .site-title {
-	margin: 0;
+	margin: 0 0 .25em;
 	padding: 0;
 	font-size: 1.6em;
 	font-weight: 900;
@@ -1414,7 +1418,7 @@ a:hover, a:active {
 }
 
 .site-description {
-	margin: 0;
+	margin: 0 0 .25em;
 	font-size: .9em;
 	font-style: italic;
 	font-weight: 100;
