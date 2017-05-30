@@ -1,10 +1,10 @@
 @charset "UTF-8";
 /*!
 Theme Name: Kuhn
-Theme URI: http://underscores.me/
+Theme URI: https://github.com/mor10/kuhn
 Author: Morten Rand-Hendriksen
 Author URI: https://mor10.com
-Description: Description
+Description: Kuhn is a hyper-opinionated WordPress theme using CSS Grid and Flexbox for layouts.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -617,6 +617,8 @@ a:hover, a:active {
 .post-navigation,
 .paging-navigation {
 	padding: 2em 0;
+	font-family: "Roboto Mono", sans-serif;
+	font-size: 90%;
 	text-align: left;
 	overflow: hidden;
 }
@@ -645,15 +647,12 @@ a:hover, a:active {
 	background: #22262a;
 }
 
-.nav-links {
-	margin: 0 auto;
+.posts-navigation {
+	margin: 0 auto 2em;
+	padding: 0 1em;
 }
 
-.nav-previous {
-	padding-bottom: 1em;
-}
-
-@media screen and (min-width: 61.875em) {
+@media screen and (min-width: 600px) {
 	.nav-links {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -692,6 +691,21 @@ a:hover, a:active {
 	}
 }
 
+@supports ((display: -ms-grid) or (display: grid)) {
+	@media screen and (min-width: 61.875em) {
+		.posts-navigation {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.nav-links {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+		}
+	}
+}
+
 .post-navigation .meta-nav {
 	display: block;
 }
@@ -711,48 +725,6 @@ a:hover, a:active {
 .post-navigation a:hover .post-title,
 .post-navigation a:focus .post-title {
 	border-bottom-color: white;
-}
-
-.pagination {
-	font-family: "Roboto Mono", sans-serif;
-}
-
-.pagination .nav-links {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-}
-
-.pagination a,
-.pagination span {
-	padding: .5em 1em;
-}
-
-.pagination a {
-	text-decoration: none;
-}
-
-.pagination a:focus, .pagination a:hover {
-	color: white;
-	background: #22262a;
-}
-
-.pagination .current {
-	font-weight: 600;
-	color: #22262a;
-}
-
-.pagination .prev .icon {
-	margin-right: 1em;
-}
-
-.pagination .next .icon {
-	margin-left: 1em;
 }
 
 /*--------------------------------------------------------------

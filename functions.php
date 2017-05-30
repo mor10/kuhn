@@ -98,7 +98,7 @@ function kuhn_fonts_url() {
 	 * into your own language.
 	 */
 	$rubik = _x( 'on', 'Rubik font: on or off', 'kuhn' );
-	$roboto_mono = _x( 'on', 'Yanone Kaffeesatz font: on or off', 'kuhn' );
+	$roboto_mono = _x( 'on', 'Roboto Mono font: on or off', 'kuhn' );
 	$slabo = _x( 'on', 'Slabo 27px font: on or off', 'kuhn' );
 
 	$font_families = array();
