@@ -34,7 +34,8 @@ body:not(.archive-view) {
 					". comments .";
 			}
 
-			.post {
+			.post,
+			.page {
 				grid-area: post;
 				display: grid;
 				grid-template-columns: repeat(4, 1fr);

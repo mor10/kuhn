@@ -820,6 +820,7 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .widget-area {
 	padding: 1.5em 2em;
+	background-color: #f2f2f2;
 }
 
 @supports ((display: -ms-grid) or (display: grid)) {
@@ -830,38 +831,56 @@ a:hover, a:active {
 	}
 }
 
-@supports ((display: -ms-grid) or (display: grid)) {
-	@media screen and (min-width: 61.875em) {
-		.archive-view .widget-area {
-			display: -webkit-box;
-			display: -ms-flexbox;
-			display: flex;
-			-ms-flex-wrap: wrap;
-			    flex-wrap: wrap;
-			-webkit-box-pack: justify;
-			    -ms-flex-pack: justify;
-			        justify-content: space-between;
-			background-color: #f2f2f2;
-			border-top: 1px solid white;
-		}
-		.archive-view .widget-area .widget {
-			width: 47.5%;
-		}
+@media screen and (min-width: 61.875em) and (max-width: 1799px) {
+	.widget-area {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		border-top: 1px solid white;
 	}
-	@media screen and (min-width: 61.875em) and (min-width: 1300px) {
-		.archive-view .widget-area .widget {
-			width: 30%;
-		}
+	.widget-area .widget {
+		width: 47.5%;
 	}
-	@media screen and (min-width: 61.875em) and (min-width: 1800px) {
-		.archive-view .widget-area .widget {
-			width: 22.5%;
-		}
+}
+
+@media screen and (min-width: 61.875em) and (max-width: 1799px) and (min-width: 1300px) {
+	.widget-area .widget {
+		width: 30%;
 	}
-	@media screen and (min-width: 61.875em) and (min-width: 2300px) {
-		.archive-view .widget-area .widget {
-			width: 18.5%;
-		}
+}
+
+@media screen and (min-width: 1300px) {
+	.archive-view .widget-area {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		background-color: #f2f2f2;
+		border-top: 1px solid white;
+	}
+	.archive-view .widget-area .widget {
+		width: 30%;
+	}
+}
+
+@media screen and (min-width: 1300px) and (min-width: 1800px) {
+	.archive-view .widget-area .widget {
+		width: 22.5%;
+	}
+}
+
+@media screen and (min-width: 1300px) and (min-width: 2300px) {
+	.archive-view .widget-area .widget {
+		width: 18.5%;
 	}
 }
 
@@ -1245,9 +1264,6 @@ a:hover, a:active {
 			    grid-template-rows: 1fr minmax(1em, auto);
 			grid-template-areas: "header main sidebar" "header footer footer";
 		}
-		.widget-area {
-			border-left: 1px solid #22262a;
-		}
 	}
 }
 
@@ -1449,7 +1465,6 @@ a:hover, a:active {
 			position: fixed;
 			width: 16.5em;
 			height: 100vh;
-			border-right: 1px solid white;
 			border-bottom: none;
 			overflow-y: scroll;
 		}
@@ -1666,7 +1681,8 @@ body:not(.archive-view) .site-main {
 			    align-content: start;
 			grid-template-areas: ". post ." ". nav ." ". comments .";
 		}
-		body:not(.archive-view) .post {
+		body:not(.archive-view) .post,
+		body:not(.archive-view) .page {
 			grid-area: post;
 			display: -ms-grid;
 			display: grid;
@@ -1675,21 +1691,28 @@ body:not(.archive-view) .site-main {
 			grid-column-gap: 20px;
 			grid-template-areas: "header header header header" "meta meta meta meta" "featimg featimg featimg featimg" "content content content content" "footer footer footer footer";
 		}
-		body:not(.archive-view) .post .entry-meta {
+		body:not(.archive-view) .post .entry-meta,
+		body:not(.archive-view) .page .entry-meta {
 			margin: -1em 0 1em;
 		}
 	}
 	@media screen and (min-width: 61.875em) and (min-width: 1300px) {
-		body:not(.archive-view) .post {
+		body:not(.archive-view) .post,
+		body:not(.archive-view) .page {
 			grid-template-areas: "header header header header" "featimg featimg featimg featimg" "meta content content content" "footer footer footer footer";
 		}
-		body:not(.archive-view) .post .entry-meta {
+		body:not(.archive-view) .post .entry-meta,
+		body:not(.archive-view) .page .entry-meta {
 			margin-top: 2.1em;
 		}
 		body:not(.archive-view) .post .byline,
 		body:not(.archive-view) .post .posted-on,
 		body:not(.archive-view) .post .comments-link,
-		body:not(.archive-view) .post .edit-link {
+		body:not(.archive-view) .post .edit-link,
+		body:not(.archive-view) .page .byline,
+		body:not(.archive-view) .page .posted-on,
+		body:not(.archive-view) .page .comments-link,
+		body:not(.archive-view) .page .edit-link {
 			display: block;
 			margin-bottom: 1em;
 		}
@@ -1699,17 +1722,30 @@ body:not(.archive-view) .site-main {
 		body:not(.archive-view) .post .comments-link:before,
 		body:not(.archive-view) .post .comments-link:after,
 		body:not(.archive-view) .post .edit-link:before,
-		body:not(.archive-view) .post .edit-link:after {
+		body:not(.archive-view) .post .edit-link:after,
+		body:not(.archive-view) .page .byline:before,
+		body:not(.archive-view) .page .byline:after,
+		body:not(.archive-view) .page .posted-on:before,
+		body:not(.archive-view) .page .posted-on:after,
+		body:not(.archive-view) .page .comments-link:before,
+		body:not(.archive-view) .page .comments-link:after,
+		body:not(.archive-view) .page .edit-link:before,
+		body:not(.archive-view) .page .edit-link:after {
 			margin: 0;
 			content: "";
 		}
 		body:not(.archive-view) .post .byline a,
 		body:not(.archive-view) .post .posted-on a,
 		body:not(.archive-view) .post .comments-link a,
-		body:not(.archive-view) .post .edit-link a {
+		body:not(.archive-view) .post .edit-link a,
+		body:not(.archive-view) .page .byline a,
+		body:not(.archive-view) .page .posted-on a,
+		body:not(.archive-view) .page .comments-link a,
+		body:not(.archive-view) .page .edit-link a {
 			display: block;
 		}
-		body:not(.archive-view) .post .extra {
+		body:not(.archive-view) .post .extra,
+		body:not(.archive-view) .page .extra {
 			display: inline;
 		}
 	}
