@@ -1740,9 +1740,9 @@ body:not(.archive-view) .site-main {
 }
 
 .cat-links {
+	margin-bottom: .5em;
 	font-family: "Roboto Mono", sans-serif;
-	font-size: 90%;
-	font-weight: 700;
+	font-size: 80%;
 }
 
 .cat-links a {
