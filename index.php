@@ -38,13 +38,9 @@ get_header(); ?>
 			get_template_part( 'template-parts/content', get_post_format() );
 
 		endwhile;
-		//
-		// the_posts_pagination( array(
-		// 	'prev_text' => __( '&#8592; Newer', 'kuhn' ),
-		// 	'next_text' => __( 'Older &#8594;', 'kuhn' ),
-		// 	'before_page_number' => '<span class="screen-reader-text">' . __( 'Page', 'kuhn' ) . '</span>',
-		// ));
+
 		the_posts_navigation();
+		
 	else :
 
 		get_template_part( 'template-parts/content', 'none' );
