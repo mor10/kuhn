@@ -191,7 +191,7 @@ button.dropdown-toggle {
 }
 
 
-@supports (display: grid) {
+@supports (grid-area: header) {
 	@media screen and (min-width: $query__medium) {
 		.menu-toggle {
 			display: none;

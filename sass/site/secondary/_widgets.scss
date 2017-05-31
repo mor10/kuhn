@@ -2,7 +2,7 @@
 	padding: 1.5em 2em;
 	background-color: $color__grey_x_light;
 
-	@supports (display: grid) {
+	@supports (grid-area: header) {
 		@media screen and (min-width: $query__wide) {
 			margin-top: 0;
 		}
@@ -391,4 +391,3 @@
 	}
 
 }
-

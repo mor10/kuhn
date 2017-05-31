@@ -64,7 +64,7 @@
 
 }
 
-@supports (display: grid) {
+@supports (grid-area: header) {
 	@media screen and (min-width: $query__medium) {
 
 		.posts-navigation {
@@ -101,4 +101,3 @@
 	}
 
 }
-

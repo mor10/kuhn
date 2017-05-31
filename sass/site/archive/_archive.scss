@@ -34,7 +34,7 @@
     }
 }
 
-@supports (display: grid) {
+@supports (grid-area: header) {
     .archive-view .site-main {
         max-width: none;
         padding: 0;

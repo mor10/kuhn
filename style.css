@@ -691,7 +691,7 @@ a:hover, a:active {
 	}
 }
 
-@supports ((display: -ms-grid) or (display: grid)) {
+@supports (grid-area: header) {
 	@media screen and (min-width: 61.875em) {
 		.posts-navigation {
 			width: 100%;
@@ -795,7 +795,7 @@ a:hover, a:active {
 	background-color: #f2f2f2;
 }
 
-@supports ((display: -ms-grid) or (display: grid)) {
+@supports (grid-area: header) {
 	@media screen and (min-width: 1300px) {
 		.widget-area {
 			margin-top: 0;
@@ -1204,7 +1204,7 @@ a:hover, a:active {
 	}
 }
 
-@supports ((display: -ms-grid) or (display: grid)) {
+@supports (grid-area: header) {
 	@media screen and (min-width: 61.875em) {
 		.site {
 			display: -ms-grid;
@@ -1278,7 +1278,7 @@ a:hover, a:active {
 	border-bottom: 3px solid #22262a;
 }
 
-@supports ((display: -ms-grid) or (display: grid)) {
+@supports (grid-area: header) {
 	.archive-view .site-main {
 		max-width: none;
 		padding: 0;
@@ -1413,26 +1413,21 @@ a:hover, a:active {
 }
 
 @media screen and (min-width: 61.875em) {
-	@supports not ((display: -ms-grid) or (display: grid)) {
+	@supports (grid-area: header) {
 		.site-header {
 			display: -webkit-box;
 			display: -ms-flexbox;
 			display: flex;
-			-webkit-box-pack: justify;
-			    -ms-flex-pack: justify;
-			        justify-content: space-between;
-		}
-		.site-branding {
-			width: 35%;
-			-webkit-box-flex: 1;
-			    -ms-flex: 1 0 auto;
-			        flex: 1 0 auto;
-		}
-		.site-navigation {
-			width: 55%;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			    -ms-flex-direction: column;
+			        flex-direction: column;
+			-webkit-box-pack: start;
+			    -ms-flex-pack: start;
+			        justify-content: flex-start;
 		}
 	}
-	@supports ((display: -ms-grid) or (display: grid)) {
+	@supports (grid-area: header) {
 		.site-header {
 			position: fixed;
 			width: 16.5em;
@@ -1606,7 +1601,7 @@ button.dropdown-toggle {
 	}
 }
 
-@supports ((display: -ms-grid) or (display: grid)) {
+@supports (grid-area: header) {
 	@media screen and (min-width: 61.875em) {
 		.menu-toggle {
 			display: none;
@@ -1643,7 +1638,7 @@ body:not(.archive-view) .site-main {
 	}
 }
 
-@supports ((display: -ms-grid) or (display: grid)) {
+@supports (grid-area: header) {
 	@media screen and (min-width: 61.875em) {
 		body:not(.archive-view) .site-main {
 			display: -ms-grid;
