@@ -12,6 +12,15 @@ Contributors welcome.
 ### Licenses and External Assets
 Kuhn is distributed under the terms of the GNU GPL v2
 
+### Changelog
+
+#### 1.0.1 - May 31 2017
+- Resolve MS Edge support by being more forceful with @supports rules (basically no grid until Edge supports it properly).
+- Code cleanup to resolve latent issues.
+
+#### 1.0 - May 30 2017 =
+- Initial release
+
 Kuhn's code base started out as _s (http://underscores.me) as it were on May 11, 2017.
 
 ### Namesake
