@@ -1213,7 +1213,7 @@ a:hover, a:active {
 			    grid-template-columns: 16.5em 1fr;
 			-ms-grid-rows: 1fr minmax(1em, auto);
 			    grid-template-rows: 1fr minmax(1em, auto);
-			grid-template-areas: "header main" "header sidebar" "header footer";
+			grid-template-areas: "header main" "header sidebar" "header footer";
 		}
 		.site-header {
 			grid-area: header;
@@ -1234,7 +1234,7 @@ a:hover, a:active {
 			    grid-template-columns: 16.5em 1fr 16.5em;
 			-ms-grid-rows: 1fr minmax(1em, auto);
 			    grid-template-rows: 1fr minmax(1em, auto);
-			grid-template-areas: "header main sidebar" "header footer footer";
+			grid-template-areas: "header main sidebar" "header footer footer";
 		}
 	}
 }
@@ -1651,7 +1651,7 @@ body:not(.archive-view) .site-main {
 			    grid-template-columns: 1fr minmax(auto, 46em) 1fr;
 			-ms-flex-line-pack: start;
 			    align-content: start;
-			grid-template-areas: ". post ." ". nav ." ". comments .";
+			grid-template-areas: ". post ." ". nav ." ". comments .";
 		}
 		body:not(.archive-view) .post,
 		body:not(.archive-view) .page {
@@ -1661,7 +1661,7 @@ body:not(.archive-view) .site-main {
 			-ms-grid-columns: (1fr)[4];
 			    grid-template-columns: repeat(4, 1fr);
 			grid-column-gap: 20px;
-			grid-template-areas: "header header header header" "meta meta meta meta" "featimg featimg featimg featimg" "content content content content" "footer footer footer footer";
+			grid-template-areas: "header header header header" "meta meta meta meta" "featimg featimg featimg featimg" "content content content content" "footer footer footer footer";
 		}
 		body:not(.archive-view) .post .entry-meta,
 		body:not(.archive-view) .page .entry-meta {
@@ -1671,7 +1671,7 @@ body:not(.archive-view) .site-main {
 	@media screen and (min-width: 61.875em) and (min-width: 1300px) {
 		body:not(.archive-view) .post,
 		body:not(.archive-view) .page {
-			grid-template-areas: "header header header header" "featimg featimg featimg featimg" "meta content content content" "footer footer footer footer";
+			grid-template-areas: "header header header header" "featimg featimg featimg featimg" "meta content content content" "footer footer footer footer";
 		}
 		body:not(.archive-view) .post .entry-meta,
 		body:not(.archive-view) .page .entry-meta {
