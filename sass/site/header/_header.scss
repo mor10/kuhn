@@ -62,32 +62,23 @@
 
 @media screen and (min-width: $query__medium) {
 
-	@supports not (display: grid) {
+	@supports (grid-area: header) {
 		.site-header {
 			display: flex;
-			justify-content: space-between;
-		}
-
-		.site-branding {
-			width: 35%;
-			flex: 1 0 auto;
-		}
-
-		.site-navigation {
-			width: 55%;
+			flex-direction: column;
+			justify-content:flex-start;
 		}
 	}
 
-	@supports (display: grid) {
+	@supports (grid-area: header) {
 		.site-header {
 			position: fixed;
 			width: 16.5em;
 			height: 100vh;
 			border-bottom: none;
-			overflow-y: scroll;
+			overflow-y: auto;
 		}
 	}
-
 }
 
 /*
