@@ -34,7 +34,7 @@
     }
 }
 
-@supports (grid-area: header) {
+@supports (grid-area: auto) {
     .archive-view .site-main {
         max-width: 40em;
         padding: 1em;
@@ -44,6 +44,7 @@
         .archive-view {
 
             .site-main {
+				max-width: none;
                 padding: 8px;
                 display: grid;
                 grid-template-columns: repeat(2,calc((100vw - 16.5em - 24px)/2));

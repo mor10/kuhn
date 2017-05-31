@@ -62,7 +62,7 @@
 
 @media screen and (min-width: $query__medium) {
 
-	@supports (grid-area: header) {
+	@supports (grid-area: auto) {
 		.site-header {
 			display: flex;
 			flex-direction: column;
@@ -70,7 +70,7 @@
 		}
 	}
 
-	@supports (grid-area: header) {
+	@supports (grid-area: auto) {
 		.site-header {
 			position: fixed;
 			width: 16.5em;

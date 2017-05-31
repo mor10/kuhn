@@ -691,7 +691,7 @@ a:hover, a:active {
 	}
 }
 
-@supports (grid-area: header) {
+@supports (grid-area: auto) {
 	@media screen and (min-width: 61.875em) {
 		.posts-navigation {
 			width: 100%;
@@ -795,7 +795,7 @@ a:hover, a:active {
 	background-color: #f2f2f2;
 }
 
-@supports (grid-area: header) {
+@supports (grid-area: auto) {
 	@media screen and (min-width: 1300px) {
 		.widget-area {
 			margin-top: 0;
@@ -1204,7 +1204,7 @@ a:hover, a:active {
 	}
 }
 
-@supports (grid-area: header) {
+@supports (grid-area: auto) {
 	@media screen and (min-width: 61.875em) {
 		.site {
 			display: -ms-grid;
@@ -1278,13 +1278,14 @@ a:hover, a:active {
 	border-bottom: 3px solid #22262a;
 }
 
-@supports (grid-area: header) {
+@supports (grid-area: auto) {
 	.archive-view .site-main {
 		max-width: 40em;
 		padding: 1em;
 	}
 	@media screen and (min-width: 61.875em) {
 		.archive-view .site-main {
+			max-width: none;
 			padding: 8px;
 			display: -ms-grid;
 			display: grid;
@@ -1413,7 +1414,7 @@ a:hover, a:active {
 }
 
 @media screen and (min-width: 61.875em) {
-	@supports (grid-area: header) {
+	@supports (grid-area: auto) {
 		.site-header {
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -1427,7 +1428,7 @@ a:hover, a:active {
 			        justify-content: flex-start;
 		}
 	}
-	@supports (grid-area: header) {
+	@supports (grid-area: auto) {
 		.site-header {
 			position: fixed;
 			width: 16.5em;
@@ -1596,7 +1597,7 @@ button.dropdown-toggle {
 	}
 }
 
-@supports (grid-area: header) {
+@supports (grid-area: auto) {
 	@media screen and (min-width: 61.875em) {
 		.menu-toggle {
 			display: none;
@@ -1655,7 +1656,7 @@ body:not(.archive-view) .site-main {
 	}
 }
 
-@supports (grid-area: header) {
+@supports (grid-area: auto) {
 	@media screen and (min-width: 61.875em) {
 		body:not(.archive-view) .site-main {
 			display: -ms-grid;

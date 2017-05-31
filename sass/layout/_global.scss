@@ -13,7 +13,7 @@
 
 }
 
-@supports (grid-area: header) {
+@supports (grid-area: auto) {
     @media screen and (min-width: $query__medium) {
 
         .site {
