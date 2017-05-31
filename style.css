@@ -1280,8 +1280,8 @@ a:hover, a:active {
 
 @supports (grid-area: header) {
 	.archive-view .site-main {
-		max-width: none;
-		padding: 0;
+		max-width: 40em;
+		padding: 1em;
 	}
 	@media screen and (min-width: 61.875em) {
 		.archive-view .site-main {
