@@ -136,7 +136,7 @@ button.dropdown-toggle {
 }
 
 
-@media screen and (min-width: $query__small) and (max-width: $query__medium) {
+@media screen and (min-width: $query__small) {
 	.menu-toggle {
 		display: none;
 	}
@@ -151,7 +151,9 @@ button.dropdown-toggle {
 		ul {
 			display: block;
 			display: flex;
+			margin-top: 1em;
 			flex-wrap: wrap;
+			justify-content: center;
 
 			ul {
 				flex-direction: column;
@@ -179,16 +181,6 @@ button.dropdown-toggle {
 
 }
 
-@media screen and (min-width: $query__medium) {
-	.main-navigation {
-
-		ul {
-			justify-content: flex-end;
-			padding-top: 0;
-		}
-
-	}
-}
 
 
 @supports (grid-area: header) {
@@ -197,9 +189,43 @@ button.dropdown-toggle {
 			display: none;
 		}
 
-		.main-navigation ul {
-			display: block;
-			padding-top: 2em;
+		.main-navigation {
+			ul {
+				display: block;
+				padding-top: 2em;
+			}
+
+			.menu-item-has-children > a,
+			.page_item_has_children > a {
+				padding-right: 2em;
+			}
+
+			ul {
+				display: block;
+				margin-top: 0;
+				padding-top: 2em;
+
+				ul {
+					margin-left: 0;
+
+					li {
+						padding-left: 0;
+
+						a {
+							width: auto;
+						}
+					}
+				}
+
+
+				a {
+					padding: .4em 0;
+					background: none;
+
+				}
+
+			}
+
 		}
 	}
 }

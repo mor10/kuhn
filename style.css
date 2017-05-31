@@ -1557,7 +1557,7 @@ button.dropdown-toggle {
 	display: block;
 }
 
-@media screen and (min-width: 600px) and (max-width: 61.875em) {
+@media screen and (min-width: 600px) {
 	.menu-toggle {
 		display: none;
 	}
@@ -1570,8 +1570,12 @@ button.dropdown-toggle {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
+		margin-top: 1em;
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 	}
 	.main-navigation ul ul {
 		-webkit-box-orient: vertical;
@@ -1592,15 +1596,6 @@ button.dropdown-toggle {
 	}
 }
 
-@media screen and (min-width: 61.875em) {
-	.main-navigation ul {
-		-webkit-box-pack: end;
-		    -ms-flex-pack: end;
-		        justify-content: flex-end;
-		padding-top: 0;
-	}
-}
-
 @supports (grid-area: header) {
 	@media screen and (min-width: 61.875em) {
 		.menu-toggle {
@@ -1609,6 +1604,28 @@ button.dropdown-toggle {
 		.main-navigation ul {
 			display: block;
 			padding-top: 2em;
+		}
+		.main-navigation .menu-item-has-children > a,
+		.main-navigation .page_item_has_children > a {
+			padding-right: 2em;
+		}
+		.main-navigation ul {
+			display: block;
+			margin-top: 0;
+			padding-top: 2em;
+		}
+		.main-navigation ul ul {
+			margin-left: 0;
+		}
+		.main-navigation ul ul li {
+			padding-left: 0;
+		}
+		.main-navigation ul ul li a {
+			width: auto;
+		}
+		.main-navigation ul a {
+			padding: .4em 0;
+			background: none;
 		}
 	}
 }
