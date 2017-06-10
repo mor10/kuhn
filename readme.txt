@@ -27,7 +27,11 @@ Kuhn includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0.1 - May 31 2017
+= 1.0.3 - June 10 2017 =
+- Replace complex calc with simpler fr in archive layout.
+- Break words in archive titles to allow for the above.
+
+= 1.0.1 - May 31 2017 =
 * Resolve MS Edge support by being more forceful with @supports rules (basically no grid until Edge supports it properly).
 * Code cleanup to resolve latent issues.
 
