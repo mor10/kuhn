@@ -1289,28 +1289,28 @@ a:hover, a:active {
 			padding: 8px;
 			display: -ms-grid;
 			display: grid;
-			-ms-grid-columns: (calc((100vw - 16.5em - 24px)/2))[2];
-			    grid-template-columns: repeat(2, calc((100vw - 16.5em - 24px)/2));
+			-ms-grid-columns: (1fr)[2];
+			    grid-template-columns: repeat(2, 1fr);
 			grid-gap: 8px;
 			background: #cccccc;
 		}
 	}
 	@media screen and (min-width: 61.875em) and (min-width: 1300px) {
 		.archive-view .site-main {
-			-ms-grid-columns: (calc((100vw - 16.5em - 32px)/3))[3];
-			    grid-template-columns: repeat(3, calc((100vw - 16.5em - 32px)/3));
+			-ms-grid-columns: (1fr)[3];
+			    grid-template-columns: repeat(3, 1fr);
 		}
 	}
 	@media screen and (min-width: 61.875em) and (min-width: 1800px) {
 		.archive-view .site-main {
-			-ms-grid-columns: (calc((100vw - 16.5em - 40px)/4))[4];
-			    grid-template-columns: repeat(4, calc((100vw - 16.5em - 40px)/4));
+			-ms-grid-columns: (1fr)[4];
+			    grid-template-columns: repeat(4, 1fr);
 		}
 	}
 	@media screen and (min-width: 61.875em) and (min-width: 2300px) {
 		.archive-view .site-main {
-			-ms-grid-columns: (calc((100vw - 16.5em - 48px)/5))[5];
-			    grid-template-columns: repeat(5, calc((100vw - 16.5em - 48px)/5));
+			-ms-grid-columns: (1fr)[5];
+			    grid-template-columns: repeat(5, 1fr);
 		}
 	}
 	@media screen and (min-width: 61.875em) {
@@ -1325,6 +1325,7 @@ a:hover, a:active {
 			    grid-column: span 2;
 		}
 		.archive-view .entry-title {
+			word-break: break-word;
 			font-size: 2em;
 		}
 		.archive-view .featured-image {
