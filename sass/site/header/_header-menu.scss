@@ -190,6 +190,8 @@ button.dropdown-toggle {
 		}
 
 		.main-navigation {
+			flex: 1 0 auto;
+			
 			ul {
 				display: block;
 				padding-top: 2em;
