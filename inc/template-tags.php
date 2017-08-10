@@ -151,3 +151,37 @@ function kuhn_excerpt_more( $more ) {
 	return "…";
 }
 add_filter( 'excerpt_more', 'kuhn_excerpt_more' );
+
+$prev_link = get_next_posts_link( __( 'Older posts' ) );
+$navigation = '<div class="nav-next">' . $prev_link . '</div>';
+
+/**
+ * Custom pagination navigation  for archive pages.
+ * Deconstructed version of get_the_posts_navigation()
+ * @link https://developer.wordpress.org/reference/functions/get_the_posts_navigation/
+ *
+ * @param string $end Defines the position of the nav button: 'next' or 'previous'.
+
+ */
+function kuhn_get_the_archive_navigation( $end ) {
+    $navigation = '';
+
+    // Don't print empty markup if there's only one page.
+    if ( $GLOBALS['wp_query']->max_num_pages > 1 ) {
+
+        if ( $end == 'next' ) {
+            $nav_link = get_previous_posts_link( _x( 'Newer posts', 'Newer posts button on archive pages.', 'kuhn' ) );
+        } elseif ( $end == 'previous' ) {
+            $nav_link = get_next_posts_link( _x( 'Older posts', 'Older posts button on archive pages.', 'kuhn' ) );
+        }
+
+        if ( $nav_link ) {
+            $navigation .= '<div class="nav-' . $end . '">' . $nav_link . '</div>';
+            $navigation = _navigation_markup( $navigation, 'posts-navigation', __( 'Posts navigation', 'Screen reader text for posts pagination areas.', 'kuhn' ) );
+        }
+
+    }
+
+    return $navigation;
+
+}
