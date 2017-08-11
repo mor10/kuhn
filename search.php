@@ -28,6 +28,8 @@ endif;
 		</header><!-- .page-header -->
 
 		<?php
+		echo kuhn_get_the_archive_navigation( 'next' );
+		
 		/* Start the Loop */
 		while ( have_posts() ) : the_post();
 
@@ -40,7 +42,7 @@ endif;
 
 		endwhile;
 
-		the_posts_navigation();
+		echo kuhn_get_the_archive_navigation( 'previous' );
 
 	else :
 

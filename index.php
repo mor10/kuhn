@@ -41,9 +41,7 @@ get_header(); ?>
 
 		endwhile;
 
-
 		echo kuhn_get_the_archive_navigation( 'previous' );
-		// the_posts_navigation();
 
 	else :
 

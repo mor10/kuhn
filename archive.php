@@ -22,6 +22,9 @@ get_header(); ?>
 		</header><!-- .page-header -->
 
 		<?php
+
+		echo kuhn_get_the_archive_navigation( 'next' );
+		
 		/* Start the Loop */
 		while ( have_posts() ) : the_post();
 
@@ -34,8 +37,8 @@ get_header(); ?>
 
 		endwhile;
 
-		the_posts_navigation();
-		
+		echo kuhn_get_the_archive_navigation( 'previous' );
+
 	else :
 
 		get_template_part( 'template-parts/content', 'none' );
