@@ -14,6 +14,11 @@ Kuhn is distributed under the terms of the GNU GPL v2
 
 ### Changelog
 
+#### 1.0.3 - August 11 2017
+- Responsive images throughout.
+- New paging navigation for archive views.
+- Minor bugfixes.
+
 #### 1.0.3 - June 10 2017
 - Replace complex calc with simpler fr in archive layout.
 - Break words in archive titles to allow for the above.
