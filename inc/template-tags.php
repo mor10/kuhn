@@ -176,7 +176,17 @@ function kuhn_get_the_archive_navigation( $end ) {
         }
 
         if ( $nav_link ) {
-            $navigation = _navigation_markup( $nav_link , 'posts-navigation', __( 'Posts navigation', 'Screen reader text for posts pagination areas.', 'kuhn' ) );
+            $navigation = '<nav class="navigation posts-navigation nav-%1$s" role="navigation">';
+            $navigation .= '<h2 class="screen-reader-text">%2$s</h2>';
+            $navigation .= '<div class="nav-links">';
+            $navigation .= '%3$s';
+            $navigation .= '</div></nav>';
+
+            $navigation = sprintf( $navigation,
+         		$end,
+         		esc_html_x( 'Posts navigation', 'Screen reader text for posts pagination areas.', 'kuhn' ),
+         		$nav_link
+         	);
         }
 
     }
