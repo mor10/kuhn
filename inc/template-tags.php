@@ -176,8 +176,7 @@ function kuhn_get_the_archive_navigation( $end ) {
         }
 
         if ( $nav_link ) {
-            $navigation .= '<div class="nav-' . $end . '">' . $nav_link . '</div>';
-            $navigation = _navigation_markup( $navigation, 'posts-navigation', __( 'Posts navigation', 'Screen reader text for posts pagination areas.', 'kuhn' ) );
+            $navigation = _navigation_markup( $nav_link , 'posts-navigation', __( 'Posts navigation', 'Screen reader text for posts pagination areas.', 'kuhn' ) );
         }
 
     }
