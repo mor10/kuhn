@@ -182,7 +182,6 @@ button.dropdown-toggle {
 }
 
 
-
 @supports (grid-area: auto) {
 	@media screen and (min-width: $query__medium) {
 		.menu-toggle {
@@ -190,6 +189,9 @@ button.dropdown-toggle {
 		}
 
 		.main-navigation {
+			flex: 1 0 auto;
+			padding-bottom: 2em;
+
 			ul {
 				display: block;
 				padding-top: 2em;

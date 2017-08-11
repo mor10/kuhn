@@ -20,7 +20,7 @@
 		&:focus {
 			color: white;
 			border-color: $color__grey_black;
-			background: $color__grey_black;
+			background-color: $color__grey_black;
 		}
 	}
 
@@ -30,6 +30,8 @@
 	margin: 0 auto 2em;
 	padding: 0 1em;
 }
+
+
 
 @media screen and (min-width: $query__small) {
 
@@ -41,7 +43,6 @@
 	}
 
 	.comment-navigation,
-	.posts-navigation,
 	.post-navigation {
 
 		.nav-previous,
@@ -68,6 +69,7 @@
 	@media screen and (min-width: $query__medium) {
 
 		.posts-navigation {
+			display: flex;
 			width: 100%;
 			margin: 0;
 			padding: 0;
@@ -75,7 +77,30 @@
 
 		.nav-links {
 			display: flex;
+			width: 100%;
 		}
+
+		.nav-next .nav-links a {
+			background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'><polyline points='32.3,57.3 6,26.7 32.3,-3.8' stroke='hsla(0, 0%, 100%, .2)' fill='transparent' stroke-width='8'/></svg>");
+			background-repeat: no-repeat;
+			background-position: left center;
+			background-size: auto 110%;
+		}
+
+		.nav-previous .nav-links a {
+			background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'><polyline points='8.3,-18.1 34.6,12.4 8.3,43' stroke='hsla(0, 0%, 100%, .2)' fill='transparent' stroke-width='8'/></svg>");
+			background-repeat: no-repeat;
+			background-position: right center;
+			background-size: auto 110%;
+		}
+
+		.nav-previous .nav-links a {
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+			min-height: 10em;
+		}
+
 	}
 }
 

@@ -22,7 +22,8 @@
 
 .archive-view {
 
-    .post {
+    .post,
+    .page {
         padding: 1em;
         &:after {
             display: block;
@@ -64,7 +65,8 @@
                 }
             }
 
-            .post {
+            .post,
+            .page {
                 background: white;
 
                 &:after {
@@ -87,5 +89,4 @@
             }
         }
     }
-
 }

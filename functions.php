@@ -41,7 +41,7 @@ function kuhn_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'kuhn-index', 1045, 600, true);
+	add_image_size( 'kuhn-index', 966, 555, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -144,6 +144,53 @@ function kuhn_resource_hints( $urls, $relation_type ) {
 	return $urls;
 }
 add_filter( 'wp_resource_hints', 'kuhn_resource_hints', 10, 2 );
+
+
+
+/**
+ * Add custom image sizes attribute to enhance responsive image functionality
+ * for content images.
+ *
+ * @origin Twenty Seventeen 1.0
+ *
+ * @param string $sizes A source size value for use in a 'sizes' attribute.
+ * @param array  $size  Image size. Accepts an array of width and height
+ *                      values in pixels (in that order).
+ * @return string A source size value for use in a content image 'sizes' attribute.
+ */
+function kuhn_content_image_sizes_attr( $sizes, $size ) {
+	if ( is_singular() ) {
+		$width = $size[0];
+		if ( 610 <= $width ) {
+			$sizes = '(min-width: 990px) 720px, (min-width: 1300px) 610px, 95vw';
+		}
+		return $sizes;
+	}
+}
+add_filter( 'wp_calculate_image_sizes', 'kuhn_content_image_sizes_attr', 10, 2 );
+
+
+/**
+ * Add custom image sizes attribute to enhance responsive image functionality
+ * for post thumbnails.
+ *
+ * @origin Twenty Seventeen 1.0
+ *
+ * @param array $attr       Attributes for the image markup.
+ * @param int   $attachment Image attachment ID.
+ * @param array $size       Registered image size or flat array of height and width dimensions.
+ * @return string A source size value for use in a post thumbnail 'sizes' attribute.
+ */
+function kuhn_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+	if ( is_singular() ) {
+		$attr['sizes'] = '(min-width: 990px) 720px, (min-width: 1300px) 820px, 95vw';
+	} else {
+		$attr['sizes'] = '(min-width: 990px) 955px, (min-width: 1300px) 966px, 95vw';
+	}
+	return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'kuhn_post_thumbnail_sizes_attr', 10, 3 );
+
 
 /**
  * Register widget area.
