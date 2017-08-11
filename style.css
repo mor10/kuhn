@@ -154,7 +154,8 @@ figure {
 }
 
 hr {
-	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	        box-sizing: content-box;
 	height: 0;
 }
 
@@ -214,7 +215,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	padding: 0;
 }
 
@@ -381,14 +383,16 @@ big {
 # Elements
 --------------------------------------------------------------*/
 html {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
 	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+	-webkit-box-sizing: inherit;
+	        box-sizing: inherit;
 }
 
 body {
@@ -742,7 +746,8 @@ a:hover, a:active {
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	-webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
 	color: #21759b;
 	display: block;
@@ -996,7 +1001,8 @@ a:hover, a:active {
 
 /* Search widget */
 .widget_search input[type="search"] {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 	width: 100%;
 	padding: .5em 1em;
 	border: 1px solid #c3c3c3;
@@ -1207,12 +1213,9 @@ a:hover, a:active {
 @supports (grid-area: auto) {
 	@media screen and (min-width: 61.875em) {
 		.site {
-			display: -ms-grid;
 			display: grid;
-			-ms-grid-columns: 16.5em 1fr;
-			    grid-template-columns: 16.5em 1fr;
-			-ms-grid-rows: 1fr minmax(1em, auto);
-			    grid-template-rows: 1fr minmax(1em, auto);
+			grid-template-columns: 16.5em 1fr;
+			grid-template-rows: 1fr minmax(1em, auto);
 			grid-template-areas: "header main" "header sidebar" "header footer";
 		}
 		.site-header {
@@ -1230,10 +1233,8 @@ a:hover, a:active {
 	}
 	@media screen and (min-width: 1800px) {
 		body:not(.archive-view) .site {
-			-ms-grid-columns: 16.5em 1fr 16.5em;
-			    grid-template-columns: 16.5em 1fr 16.5em;
-			-ms-grid-rows: 1fr minmax(1em, auto);
-			    grid-template-rows: 1fr minmax(1em, auto);
+			grid-template-columns: 16.5em 1fr 16.5em;
+			grid-template-rows: 1fr minmax(1em, auto);
 			grid-template-areas: "header main sidebar" "header footer footer";
 		}
 	}
@@ -1287,30 +1288,25 @@ a:hover, a:active {
 		.archive-view .site-main {
 			max-width: none;
 			padding: 8px;
-			display: -ms-grid;
 			display: grid;
-			-ms-grid-columns: (1fr)[2];
-			    grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(2, 1fr);
 			grid-gap: 8px;
 			background: #cccccc;
 		}
 	}
 	@media screen and (min-width: 61.875em) and (min-width: 1300px) {
 		.archive-view .site-main {
-			-ms-grid-columns: (1fr)[3];
-			    grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 	@media screen and (min-width: 61.875em) and (min-width: 1800px) {
 		.archive-view .site-main {
-			-ms-grid-columns: (1fr)[4];
-			    grid-template-columns: repeat(4, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 		}
 	}
 	@media screen and (min-width: 61.875em) and (min-width: 2300px) {
 		.archive-view .site-main {
-			-ms-grid-columns: (1fr)[5];
-			    grid-template-columns: repeat(5, 1fr);
+			grid-template-columns: repeat(5, 1fr);
 		}
 	}
 	@media screen and (min-width: 61.875em) {
@@ -1321,8 +1317,7 @@ a:hover, a:active {
 			display: none;
 		}
 		.archive-view .category-featured {
-			-ms-grid-column: span 2;
-			    grid-column: span 2;
+			grid-column: span 2;
 		}
 		.archive-view .entry-title {
 			word-break: break-word;
@@ -1671,10 +1666,8 @@ body:not(.archive-view) .site-main {
 @supports (grid-area: auto) {
 	@media screen and (min-width: 61.875em) {
 		body:not(.archive-view) .site-main {
-			display: -ms-grid;
 			display: grid;
-			-ms-grid-columns: 1fr minmax(auto, 46em) 1fr;
-			    grid-template-columns: 1fr minmax(auto, 46em) 1fr;
+			grid-template-columns: 1fr minmax(auto, 46em) 1fr;
 			-ms-flex-line-pack: start;
 			    align-content: start;
 			grid-template-areas: ". post ." ". nav ." ". comments .";
@@ -1682,10 +1675,8 @@ body:not(.archive-view) .site-main {
 		body:not(.archive-view) .post,
 		body:not(.archive-view) .page {
 			grid-area: post;
-			display: -ms-grid;
 			display: grid;
-			-ms-grid-columns: (1fr)[4];
-			    grid-template-columns: repeat(4, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 			grid-column-gap: 20px;
 			grid-template-areas: "header header header header" "meta meta meta meta" "featimg featimg featimg featimg" "content content content content" "footer footer footer footer";
 		}
@@ -2011,7 +2002,8 @@ body:not(.archive-view) .site-main {
 }
 
 .bypostauthor .avatar {
-	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	        box-sizing: content-box;
 	border: 5px solid #cccccc;
 	margin-top: -5px;
 	margin-left: -5px;
@@ -2111,7 +2103,6 @@ body:not(.archive-view) .site-main {
 .site-info {
 	margin: 1em 0 1em auto;
 	-ms-flex-item-align: center;
-	    -ms-grid-row-align: center;
 	    align-self: center;
 }
 
@@ -2257,7 +2248,8 @@ object {
 
 .gallery-item a:hover, .gallery-item a:focus {
 	border-bottom: none;
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 }
 
 .gallery-item a:hover img, .gallery-item a:focus img {
