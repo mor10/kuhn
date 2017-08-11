@@ -1292,11 +1292,13 @@ a:hover, a:active {
 	font-size: 90%;
 }
 
-.archive-view .post {
+.archive-view .post,
+.archive-view .page {
 	padding: 1em;
 }
 
-.archive-view .post:after {
+.archive-view .post:after,
+.archive-view .page:after {
 	display: block;
 	margin: 4em 0;
 	width: 33.33%;
@@ -1335,10 +1337,12 @@ a:hover, a:active {
 		}
 	}
 	@media screen and (min-width: 61.875em) {
-		.archive-view .post {
+		.archive-view .post,
+		.archive-view .page {
 			background: white;
 		}
-		.archive-view .post:after {
+		.archive-view .post:after,
+		.archive-view .page:after {
 			display: none;
 		}
 		.archive-view .category-featured {
