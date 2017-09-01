@@ -45,7 +45,8 @@ function kuhn_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'kuhn' ),
+		'primary' => esc_html__( 'Primary', 'kuhn' ),
+		'social' => esc_html__( 'Social Media Menu', 'hume' ),
 	) );
 
 	/*
@@ -259,6 +260,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load SVG icon functions.
+ */
+require get_template_directory() . '/inc/icon-functions.php';
 
 /**
  * Load custom widgets

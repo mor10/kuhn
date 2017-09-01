@@ -1,0 +1,28 @@
+.social-menu {
+	margin: 1em 0;
+
+    ul {
+    	display: flex;
+        justify-content: center;
+	    flex-wrap: wrap;
+    	list-style-type: none;
+    	margin: 0;
+    	padding: 0;
+
+        a {
+        	display: block;
+        	padding: .5em 1em;
+        	color: white;
+        	text-decoration: none;
+        	opacity: .6;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            	opacity: 1;
+            	cursor: pointer;
+            }
+        }
+    }
+
+}
