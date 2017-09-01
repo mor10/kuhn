@@ -36,13 +36,10 @@
 .site-info {
 	margin: 1em 0 1em auto;
 	align-self: center;
+	font-size: 90%;
 
 	@media screen and (min-width: $query__medium) {
 		text-align: right;
-
-		span {
-			display: block;
-		}
 	}
 }
 

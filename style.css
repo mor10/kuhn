@@ -2133,14 +2133,12 @@ body:not(.archive-view) .site-main {
 	margin: 1em 0 1em auto;
 	-ms-flex-item-align: center;
 	    align-self: center;
+	font-size: 90%;
 }
 
 @media screen and (min-width: 61.875em) {
 	.site-info {
 		text-align: right;
-	}
-	.site-info span {
-		display: block;
 	}
 }
 

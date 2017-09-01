@@ -13,9 +13,12 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'kuhn' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'kuhn' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'kuhn' ), 'kuhn', '<a href="https://automattic.com/" rel="designer">Morten Rand-Hendriksen</a>' ); ?>
+			<span class="sitemeta">
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'kuhn' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s.', 'kuhn' ), 'WordPress' ); ?></a>
+			</span>
+			<span class="sitemeta">
+				<?php printf( esc_html__( 'Theme: %1$s.', 'kuhn' ), '<a href="https://wordpress.org/themes/kuhn" rel="nofollow">Kuhn</a>' ); ?>
+			</span>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
