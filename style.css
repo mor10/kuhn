@@ -760,7 +760,10 @@ a:hover, a:active {
 ## Sociam Media Navigation
 --------------------------------------------------------------*/
 .social-menu {
-	margin: 1em 0;
+	margin-bottom: -1.5em;
+	padding: 1em 0;
+	color: #fff;
+	background-color: #22262a;
 }
 
 .social-menu ul {
@@ -780,15 +783,35 @@ a:hover, a:active {
 .social-menu ul a {
 	display: block;
 	padding: .5em 1em;
-	color: white;
+	color: transparent;
 	text-decoration: none;
-	opacity: .6;
+}
+
+.social-menu ul a .icon {
+	fill: rgba(255, 255, 255, 0.5);
+	-webkit-transition: fill .2s;
+	transition: fill .2s;
 }
 
 .social-menu ul a:hover, .social-menu ul a:focus {
 	text-decoration: underline;
-	opacity: 1;
 	cursor: pointer;
+}
+
+.social-menu ul a:hover .icon, .social-menu ul a:focus .icon {
+	fill: white;
+}
+
+@media screen and (min-width: 61.875em) {
+	.social-menu {
+		padding-top: 0;
+		margin-right: -1em;
+	}
+	.social-menu ul {
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -2147,23 +2170,6 @@ body:not(.archive-view) .site-main {
 	}
 }
 
-.site-footer__wrap {
-	max-width: 1080px;
-	margin: 0 auto;
-	padding: 0 2em;
-}
-
-@media screen and (min-width: 61.875em) {
-	.site-footer__wrap {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: justify;
-		    -ms-flex-pack: justify;
-		        justify-content: space-between;
-	}
-}
-
 .site-info {
 	margin: 1em 0 1em auto;
 	-ms-flex-item-align: center;
@@ -2175,38 +2181,6 @@ body:not(.archive-view) .site-main {
 	.site-info {
 		text-align: right;
 	}
-}
-
-.social-menu {
-	margin: 1em 0;
-}
-
-.social-menu ul {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-.social-menu ul a {
-	display: block;
-	padding: .5em 1em;
-	color: white;
-	text-decoration: none;
-	opacity: .6;
-}
-
-.social-menu ul a:hover, .social-menu ul a:focus {
-	text-decoration: underline;
-	opacity: 1;
-	cursor: pointer;
 }
 
 /*--------------------------------------------------------------
@@ -2371,11 +2345,11 @@ object {
 	display: inline-block;
 	fill: currentColor;
 	height: 1em;
+	width: 1em;
 	position: relative;
 	/* Align more nicely with capital letters */
 	top: -0.0625em;
 	vertical-align: middle;
-	width: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -2393,14 +2367,6 @@ SVG Fallbacks
 	padding: 0 .5em;
 	color: inherit;
 	background: inherit;
-}
-
-.no-svg .svg-fallback.icon-arrow-long-left:before {
-	content: "←";
-}
-
-.no-svg .svg-fallback.icon-arrow-long-right:before {
-	content: "→";
 }
 
 /* Social Menu fallbacks */

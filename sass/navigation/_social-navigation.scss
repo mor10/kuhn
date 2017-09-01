@@ -1,5 +1,8 @@
 .social-menu {
-	margin: 1em 0;
+	margin-bottom: -1.5em;
+	padding: 1em 0;
+	color: #fff;
+	background-color: $color__grey_black;
 
     ul {
     	display: flex;
@@ -12,17 +15,33 @@
         a {
         	display: block;
         	padding: .5em 1em;
-        	color: white;
+        	color: transparent;
         	text-decoration: none;
-        	opacity: .6;
+
+			.icon {
+				fill: hsla(0, 0%, 100%, .5);
+				transition: fill .2s;
+			}
 
             &:hover,
             &:focus {
                 text-decoration: underline;
-            	opacity: 1;
             	cursor: pointer;
+
+				.icon {
+					fill: white;
+				}
             }
         }
     }
+}
 
+@media screen and (min-width: $query__medium) {
+	.social-menu {
+		padding-top: 0;
+		margin-right: -1em;
+		ul {
+	        justify-content: flex-end;
+		}
+	}
 }

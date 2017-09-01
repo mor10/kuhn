@@ -4,10 +4,10 @@
 	display: inline-block;
 	fill: currentColor;
 	height: 1em;
+	width: 1em;
 	position: relative; /* Align more nicely with capital letters */
 	top: -0.0625em;
 	vertical-align: middle;
-	width: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -26,14 +26,6 @@ SVG Fallbacks
 	padding: 0 .5em;
 	color: inherit;
 	background: inherit;
-}
-
-.no-svg .svg-fallback.icon-arrow-long-left:before {
-	content: "←";
-}
-
-.no-svg .svg-fallback.icon-arrow-long-right:before {
-	content: "→";
 }
 
 

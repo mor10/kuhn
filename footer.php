@@ -11,6 +11,8 @@
 
 ?>
 
+
+
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<?php if( has_nav_menu( 'social' ) ) { ?>
 			<nav class="social-menu">
@@ -25,7 +27,6 @@
 				?>
 			</nav><!-- .social-menu -->
 		<?php } ?>
-
 		<div class="site-info">
 			<span class="sitemeta">
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'kuhn' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s.', 'kuhn' ), 'WordPress' ); ?></a>
