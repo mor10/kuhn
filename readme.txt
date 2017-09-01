@@ -27,7 +27,11 @@ Kuhn includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0.3 - August 11 2017 =
+= 1.0.5 - Sepbember 01 2017 =
+- Main menu floats to the top on wide screens.
+- Social media menu added to footer.
+
+= 1.0.4 - August 11 2017 =
 - Responsive images throughout.
 - New paging navigation for archive views.
 - Minor bugfixes.
