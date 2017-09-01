@@ -1453,9 +1453,13 @@ a:hover, a:active {
 			        justify-content: flex-start;
 		}
 		.site-branding {
-			-webkit-box-flex: 1;
-			    -ms-flex: 1 0 auto;
-			        flex: 1 0 auto;
+			-webkit-box-flex: 0;
+			    -ms-flex: 0 0 auto;
+			        flex: 0 0 auto;
+		}
+		.site-branding:after {
+			margin-top: 1em;
+			content: "∞";
 		}
 	}
 	@supports (grid-area: auto) {
@@ -1638,10 +1642,6 @@ button.dropdown-toggle {
 			        flex: 1 0 auto;
 			padding-bottom: 2em;
 		}
-		.main-navigation ul {
-			display: block;
-			padding-top: 2em;
-		}
 		.main-navigation .menu-item-has-children > a,
 		.main-navigation .page_item_has_children > a {
 			padding-right: 2em;
@@ -1649,7 +1649,7 @@ button.dropdown-toggle {
 		.main-navigation ul {
 			display: block;
 			margin-top: 0;
-			padding-top: 2em;
+			padding-top: 1em;
 		}
 		.main-navigation ul ul {
 			margin-left: 0;

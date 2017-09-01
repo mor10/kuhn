@@ -71,7 +71,14 @@
 		}
 
 		.site-branding {
-			flex: 1 0 auto;
+			flex: 0 0 auto;
+		}
+
+		.site-branding:after {
+			margin-top: 1em;
+			content: "∞";
+			// width: 10%;
+			// border: 1px dotted hsla(0, 0%, 100%, .5);
 		}
 	}
 
