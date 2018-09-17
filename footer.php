@@ -32,7 +32,7 @@
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'kuhn' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s.', 'kuhn' ), 'WordPress' ); ?></a>
 			</span>
 			<span class="sitemeta">
-				<?php printf( esc_html__( 'Theme: %1$s.', 'kuhn' ), '<a href="https://wordpress.org/themes/kuhn" rel="nofollow">Kuhn</a>' ); ?>
+				<?php printf( esc_html__( 'Theme: %1$s.', 'kuhn' ), '<a href="https://github.com/mor10/kuhn" rel="nofollow">Kuhn</a>' ); ?>
 			</span>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
